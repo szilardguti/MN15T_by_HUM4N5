@@ -27,6 +27,8 @@ A teszt képek egymás után jövetele legyen gyors.
 
 ### Jelenlegi üzleti folyamatok
 
+### Igényelt üzleti folyamatok
+
 ### A rendszerre vonatkozó szabályok
 
 -A weboldalt HTML nyelven írjuk meg.
