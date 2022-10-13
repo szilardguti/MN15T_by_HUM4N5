@@ -10,7 +10,7 @@ part in the process of identifying MNIST data
 
 - Future projects might provide useful data to actual ML programs
 
-## C0NTR1B8T0R5
+## C0NTR18UT0R5
 
 - [Nagy László](https://github.com/Laci730)
 - [Erdei Ákos](https://github.com/erdeiakos)
