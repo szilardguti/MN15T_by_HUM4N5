@@ -13,7 +13,7 @@ ezáltal újraírást igényel, ami értékes időbe telik.
 
 Szeretnénk egy olyan eszközt/statisztikát nyújtani munkatársainknak és az általunk támogatott intézményeknek, 
 amely segítségével a különböző módon írt számok tényleges értékének értelmezését tudják gyakorolni, 
-továbbá önkéntes alapon felmérhetjük az ország különböző területén az értelmezési tendenciákat.
+továbbá önkéntes alapon felmérhetjük az értelmezési tendenciákat.
 
 ### Vágyálomrendszer leírása
 
@@ -31,13 +31,13 @@ A teszt képek egymás után jövetele legyen gyors.
 
 ### A rendszerre vonatkozó szabályok
 
--A weboldalt HTML nyelven írjuk meg.
--A weboldal kliens-oldali funkcionalitásához JavaScriptet használunk.
--A weboldal megjelenését CSS stíluslappal formázzuk.
--Adatok hosszútávú tárolására egy SQL szervert veszünk igénybe.
--A weboldal CSS és JavaScript részeit külön álloményban adjuk meg, nem  a HTML-be ágyazva.
--A weboldalnak személyi számítógépről és okostelefonról is használhatónak kell lennie.
--A weboldalnak tudnia kell igazodni a megjelenítő eszköz felbontásához.
+- A weboldalt HTML nyelven írjuk meg.
+- A weboldal kliens-oldali funkcionalitásához JavaScriptet használunk.
+- A weboldal megjelenését CSS stíluslappal formázzuk.
+- Adatok hosszútávú tárolására egy SQL szervert veszünk igénybe.
+- A weboldal CSS és JavaScript részeit külön álloményban adjuk meg, nem  a HTML-be ágyazva.
+- A weboldalnak személyi számítógépről és okostelefonról is használhatónak kell lennie.
+- A weboldalnak tudnia kell igazodni a megjelenítő eszköz felbontásához.
 
 ### Követelménylista
 
@@ -46,7 +46,7 @@ K02 Reszponzív dizájn
 K03 Rendszerfüggetlenség
 K04 Gyors működés
 K05 Könnyű kezelhetőség
-K06 A weboldal telefonon is megjeleníthetőlegyen
+K06 A weboldal telefonon is megjeleníthető legyen
 
 ### Fogalomszótár
 
