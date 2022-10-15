@@ -57,15 +57,15 @@ Amennyiben a felhasználó nem törölni szeretné a dokumentumot, akkor a szerk
 
 ### Követelménylista
 
-K01 Hordozhatóság
-K02 Reszponzív dizájn
-K03 Rendszerfüggetlenség
-K04 Gyors működés
-K05 Könnyű kezelhetőség
-K06 A weboldal telefonon is megjeleníthető legyen
+- K01 Hordozhatóság
+- K02 Reszponzív dizájn
+- K03 Rendszerfüggetlenség
+- K04 Gyors működés
+- K05 Könnyű kezelhetőség
+- K06 A weboldal telefonon is megjeleníthető legyen
 
 ### Fogalomszótár
 
-HTML - Hypertext Markup Language
-CSS - Cascading Style Sheets
-SQL - Structured Query Language
+- HTML - Hypertext Markup Language
+- CSS - Cascading Style Sheets
+- SQL - Structured Query Language
