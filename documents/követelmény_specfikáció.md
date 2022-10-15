@@ -41,6 +41,9 @@ Amennyiben a felhasználó nem törölni szeretné a dokumentumot, akkor a szerk
 ![szerkesztés folyamata](images4documents/jelenlegi_szerkeszt%C3%A9s_folyamata.png)
 
 ### Igényelt üzleti folyamatok
+- A webalkalmazás oldalra navigálás -> egyértelműen látszódik az tesztelés elkezdésének és az összetett statisztikák mutatásának lehetőségei -> valamelyik gombra kattintás :
+    - Start gombra kattintás: a felhasználó megadja alapvető adatait -> elkezdődik a tesztelés ciklusa -> a rendszer betölt egy képet az MNIST adatbázisból -> megjelennek a lehetséges válaszok -> a felhasználó választ egyet a lehetőségek közül -> az eredmény bekerül az eredmények adattáblába -> visszaérkezik arra a képre releváns statisztika -> felhasználó egyhuzamban kitöltött tesztjeinek számát jegyezzük és visszajelzést biztosítunk -> újra választhat a felhasználó, hogy folytatja a tesztek kitöltését vagy az összesített statisztikákat szeretné megtekinteni
+    - Összetett statisztika gombra kattintás: a felhasználó átkerül egy összesített statisztikákat mutató oldalra -> a felhasználó adatait, többek között a streak értékét, lementjük -> visszanavigálhat a tesztelések oldalára, ahol nem kell újra kitölteni az adatait, esetleg úja le kell igazolnia azokat
 
 ### A rendszerre vonatkozó szabályok
 
