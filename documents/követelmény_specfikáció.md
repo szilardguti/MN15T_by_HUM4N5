@@ -27,6 +27,19 @@ A teszt képek egymás után jövetele legyen gyors.
 
 ### Jelenlegi üzleti folyamatok
 
+A mostani rendszerünk leginkább különböző típusú dokumentumokhoz biztosít CRUD műveleteket, amik a következőek:
+- Létrehozás: bármilyen típusú dokumentum létrehozása
+- Visszaolvasás/Letöltés: 
+    - akár online tárhelyen vagy gépről való visszaolvasás/megnyitás 
+    - felhőből letöltés lehetősége
+- Módosítás: bármilyen módon megnyitott dokumentumok módosítása és azok mentése
+- Törlés: felhőben tárolt dokumentumok kitörlése
+Támogatja az üzleti életben legtöbbet használt formátumokat. 
+Mindehez egy bizonyos adat mennyiségig ingyenes tárhelyet biztosítunk.
+Amennyiben a felhasználó nem törölni szeretné a dokumentumot, akkor a szerkesztés folyamata a következő képpen néz ki:
+
+![szerkesztés folyamata](images4documents/jelenlegi_szerkeszt%C3%A9s_folyamata.png)
+
 ### Igényelt üzleti folyamatok
 
 ### A rendszerre vonatkozó szabályok
