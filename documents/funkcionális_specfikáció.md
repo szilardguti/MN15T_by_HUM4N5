@@ -27,7 +27,39 @@ A teszt képek egymás után jövetele legyen gyors.
 
 ### Jelenlegi üzleti folyamatok
 
+A mostani rendszerünk leginkább különböző típusú dokumentumokhoz biztosít CRUD műveleteket, amik a következőek:
+- Létrehozás: bármilyen típusú dokumentum létrehozása 
+> ennek egy átmeneti másolata képződik le az általunk használt felhő tárhelyen és az első mentés alkalmával a felhasználó dönt, hogy hol tárolódjon a file
+- Visszaolvasás/Letöltés: 
+    - akár online tárhelyen vagy gépről való visszaolvasás/megnyitás 
+    - felhőből letöltés lehetősége
+- Módosítás: bármilyen módon megnyitott dokumentumok módosítása és azok mentése 
+> a módosítások egyből a felhőben vagy lokálisan tárolt dokumentumba mentődnek
+- Törlés: felhőben tárolt dokumentumok kitörlése
+> ez a folyamat visszafordíthatatlan, a felhasználónak többször is meg kell erősítenie  
+
+Támogatja az üzleti életben legtöbbet használt formátumokat. (PDF, DOC/DOCX, XLS, XML, HTML)  
+Mindehez 10 GB ingyenes tárhelyet biztosítunk a felhő szolgáltatással, ezen felül külön számlázással tarthat igényt a felhasználó tárhelyre, ami havi fizetéses.  
+Amennyiben a felhasználó nem törölni szeretné a dokumentumot, akkor a szerkesztés folyamata a következő képpen néz ki:
+
+![szerkesztés folyamata](images4documents/jelenlegi_szerkeszt%C3%A9s_folyamata.png)
+
 ### Igényelt üzleti folyamatok
+- A webalkalmazás oldalra navigálás -> egyértelműen látszódik az tesztelés elkezdésének és az összetett statisztikák mutatásának lehetőségei, melyek HTML gombokként jelennek meg -> valamelyik gombra kattintás :
+    - **Start** gombra kattintás:  
+     a felhasználó megadja alapvető adatait, ezek még csak kliens oldalon kerülnek mentésre ->  
+     elkezdődik a tesztelés ciklusa ->  
+     a rendszer betölt egy képet az MNIST adatbázisból [ilyenkor érdemes lenne betölteni egy vagy két rákövetkező képet is, ezeket cache-be betölteni így meggyorsítva a képek betöltését] ->  
+     megjelennek a lehetséges válaszok egy grind panelben, 1-9ig számokkal ->  
+     a felhasználó választ egyet a lehetőségek közül ->  
+     az eredmény bekerül az eredmények adattáblába, melynél fontos a visszaérkező kód ->  
+     visszaérkezik arra a képre releváns statisztika, aminél még kliens oldali számítás nem szükséges ->  
+     felhasználó egyhuzamban kitöltött tesztjeinek számát jegyezzük és visszajelzést biztosítunk ->  
+     újra választhat a felhasználó, hogy folytatja a tesztek kitöltését vagy az összesített statisztikákat szeretné megtekinteni
+    - **Összetett statisztika** gombra kattintás:  
+     a felhasználó átkerül egy összesített statisztikákat mutató oldalra, ezeket nodejs bővítménnyel számíthatjuk ki ->  
+     a felhasználó adatait, többek között a streak értékét, lementjük ->  
+     visszanavigálhat a tesztelések oldalára, ahol nem kell újra kitölteni az adatait, esetleg úja le kell igazolnia azokat
 
 ### A rendszerre vonatkozó szabályok
 
