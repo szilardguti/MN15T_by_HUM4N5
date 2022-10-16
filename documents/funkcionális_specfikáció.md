@@ -49,6 +49,7 @@ Amennyiben a felhasználó nem törölni szeretné a dokumentumot, akkor a szerk
 ![szerkesztés folyamata](images4documents/jelenlegi_szerkeszt%C3%A9s_folyamata.png)
 
 ### Igényelt üzleti folyamatok
+
 - A webalkalmazás oldalra navigálás -> egyértelműen látszódik az tesztelés elkezdésének és az összetett statisztikák mutatásának lehetőségei, melyek HTML gombokként jelennek meg -> valamelyik gombra kattintás :
     - **Start** gombra kattintás:  
      a felhasználó megadja alapvető adatait, ezek még csak kliens oldalon kerülnek mentésre ->  
@@ -65,9 +66,23 @@ Amennyiben a felhasználó nem törölni szeretné a dokumentumot, akkor a szerk
      a felhasználó adatait, többek között a streak értékét, lementjük ->  
      visszanavigálhat a tesztelések oldalára, ahol nem kell újra kitölteni az adatait, esetleg úja le kell igazolnia azokat
 
-### Igényelt üzleti folyamatok modellje ábra
+### Használati esetek
 
- ![Igenyelt_uzleti_folyamatok](images4documents/Igenyelt_uzleti_folyamatok.png)
+ - Új felhasználó:  
+> Kötelező megadnia a szükséges adatait.  
+> Beviteli mezőket kitöltve a megadott adatok kliens oldalon tárolódnak el.  
+> Ez különböző technológiákkal is megoldható, szóba jöhetnek a cookie-k vagy javascripten keresztüli átvitel  
+> Miután megadta az adatokat elkezdődik a tesztelési ciklus  
+
+ - Visszatérő felhasználó:  
+> Az adatai automatikusan kitöltődnek a beviteli mezőkben  
+> Azonban szükséges egy megerősítés  
+> Ezzel egy számítógépen több felhasználós kitöltés is megvalósítható  
+
+ - Statisztikák kimutatása tesztelés közben:  
+> A felhasználónak válaszadás után megjelenik egy egyszerű grafikon  
+> Ebből könnyen leolvashatja, hogy milyen eredmények születtek eddig az adott tesztre  
+> Ezáltal visszajelzést kap a saját teljesítményéről 
 
 ### A rendszerre vonatkozó szabályok
 
@@ -86,16 +101,10 @@ Amennyiben a felhasználó nem törölni szeretné a dokumentumot, akkor a szerk
 - K03 Rendszerfüggetlenség
 - K04 Gyors működés
 - K05 Könnyű kezelhetőség
-- K06 A weboldal telefonon is megjeleníthetőlegyen
-- K07 Gamifikáció/Játékosítás
+- K06 A weboldal telefonon is megjeleníthető legyen
 
 ### Fogalomszótár
 
 - HTML - Hypertext Markup Language
 - CSS - Cascading Style Sheets
 - SQL - Structured Query Language
-- CRUD - Négy alapvető művelet adatok tartós tárolásakor
-    - Create: Létrehozás - HTTP POST kérés
-    - Read: Visszaolvasás - HTTP GET kérés
-    - Update: Frissítés/Módosítás - HTTP PUT kérés
-    - Delete: Törlés - HTTP DELETE kérés
