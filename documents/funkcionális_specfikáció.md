@@ -1,5 +1,9 @@
 # Funkcionális specifikáció
 
+### A rendszer célja
+
+Adatok gyűjtése minél több ember közreműködésével, majd a kitöltési statisztikák alapján segíeni a különböző kézzel írt számok értékének megértését.
+
 ### Jelenlegi helyzet leírása
 
 A kézírás értelmezése betűknél és számoknál egyaránt kihívást tud okozni az embereknek.
