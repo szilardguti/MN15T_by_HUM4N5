@@ -87,6 +87,7 @@ Amennyiben a felhasználó nem törölni szeretné a dokumentumot, akkor a szerk
 - K04 Gyors működés
 - K05 Könnyű kezelhetőség
 - K06 A weboldal telefonon is megjeleníthetőlegyen
+- K07 Gamifikáció/Játékosítás
 
 ### Fogalomszótár
 
