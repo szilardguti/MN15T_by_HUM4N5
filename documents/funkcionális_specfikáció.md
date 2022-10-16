@@ -66,6 +66,11 @@ Amennyiben a felhasználó nem törölni szeretné a dokumentumot, akkor a szerk
      a felhasználó adatait, többek között a streak értékét, lementjük ->  
      visszanavigálhat a tesztelések oldalára, ahol nem kell újra kitölteni az adatait, esetleg úja le kell igazolnia azokat
 
+### Igényelt üzleti folyamatok modellje ábra
+
+![Igenyelt_uzleti_folyamatok](images4documents/Igenyelt_uzleti_folyamatok.png)
+
+
 ### Használati esetek
 
  - Új felhasználó:  
@@ -102,6 +107,7 @@ Amennyiben a felhasználó nem törölni szeretné a dokumentumot, akkor a szerk
 - K04 Gyors működés
 - K05 Könnyű kezelhetőség
 - K06 A weboldal telefonon is megjeleníthető legyen
+- K07 Gamifikáció/Játékosítás
 
 ### Fogalomszótár
 
