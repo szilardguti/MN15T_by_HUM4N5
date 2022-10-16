@@ -89,3 +89,8 @@ Amennyiben a felhasználó nem törölni szeretné a dokumentumot, akkor a szerk
 - HTML - Hypertext Markup Language
 - CSS - Cascading Style Sheets
 - SQL - Structured Query Language
+- CRUD - Négy alapvető művelet adatok tartós tárolásakor
+    - Create: Létrehozás - HTTP POST kérés
+    - Read: Visszaolvasás - HTTP GET kérés
+    - Update: Frissítés/Módosítás - HTTP PUT kérés
+    - Delete: Törlés - HTTP DELETE kérés
