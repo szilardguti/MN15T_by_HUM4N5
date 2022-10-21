@@ -46,6 +46,11 @@ Amennyiben a felhasználó nem törölni szeretné a dokumentumot, akkor a szerk
     - **Összetett statisztika** gombra kattintás:  
      a felhasználó átkerül egy összesített statisztikákat mutató oldalra -> a felhasználó adatait, többek között a streak értékét, lementjük -> visszanavigálhat a tesztelések oldalára, ahol nem kell újra kitölteni az adatait, esetleg úja le kell igazolnia azokat
 
+Az adatbázisban tárolt számok között vannak olyanok, amelyek egyszerűbben felismerhetőek, de előfordulnak
+más számokkal könnyen összetéveszthető kézírások is. Szeretnénk ha felhasználónként a kitöltések számával 
+egyenesen arányosan jelenne meg egyre több ilyen megosztó kép, 
+mivel ezekből érdekesebb statisztikákat lehet kinyerni.
+
 ### A rendszerre vonatkozó szabályok
 
 - A weboldalt HTML nyelven írjuk meg.
