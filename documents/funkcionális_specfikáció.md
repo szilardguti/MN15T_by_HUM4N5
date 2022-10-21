@@ -66,6 +66,21 @@ Amennyiben a felhasználó nem törölni szeretné a dokumentumot, akkor a szerk
      a felhasználó adatait, többek között a streak értékét, lementjük ->  
      visszanavigálhat a tesztelések oldalára, ahol nem kell újra kitölteni az adatait, esetleg úja le kell igazolnia azokat
 
+Az adatbázisban tárolt számok között vannak olyanok, amelyek egyszerűbben felismerhetőek, de előfordulnak
+más számokkal könnyen összetéveszthető kézírások is. Szeretnénk ha felhasználónként a kitöltések számával egyenesen arányosan jelenne meg egyre több ilyen megosztó kép, mivel ezekből érdekesebb statisztikákat lehet kinyerni.
+
+Megvalósítás:
+
+- Véletlen képválasztás manipulációja: minél több kérdésre válaszol a kitöltő, annál nagyobb eséllyel jelenik meg egy olyan kép, aminél a válasz nem egyértelmű, mindez az előző kitöltések alapján derül ki.
+Minden kép esetén tárolásra kerülnek a hozzá tartozó válaszok. Ha ezekből a tárolt adatokból kimutatható hogy a válaszolók véleménye megegyező, akkor az adott kép kisebb gyakorisággal fog felbukkanni a továbbiakban, míg a kétértelműek többször, ezzel érdekesebbé téve a felmérést.
+
+- Példa: a felhasználó elkezdi a teszt kitöltését
+    - az első képnél ~99% az egyértelmű kép esélye
+    - az ötödik képnél ~50% az egyértelmű kép esélye
+    - a tizedik képnél ~25% az egyértelmű kép esélye
+
+Amennyiben egy felhasználó az egyértelmű képekre nem a várt eredményt produkálja, az hatással lesz a kép egyértelműségi tényezőjére, így az más felhasználóknál frekventáltabban fog megjelenni.
+
 ### Igényelt üzleti folyamatok modellje
 
 ![Igenyelt_uzleti_folyamatok](images4documents/Igenyelt_uzleti_folyamatok.png)
