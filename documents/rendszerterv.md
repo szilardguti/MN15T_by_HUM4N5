@@ -51,3 +51,19 @@ Webre való fejlesztés miatt frontend és backend részekre osztjuk a fejleszt�
 - Visual Studio Code
 - MySQL
 
+## **Domain specifikáció**
+
+Az alkalmazás három fő részből áll össze:
+1. Frontend fejlesztése:
+	- Alapvető dizájn elemek megtervezése
+	- Felhasználói adatok biztonságos továbbításának/megjelenítésének tervezése
+	- Kliensoldali funkciók fejlesztése
+
+2. Backend fejlesztése:
+	- Beérkező adatok feldolgozását megvalósító funkciók fejlesztése üzleti logika alapján
+	- Adatbázis és Backend kapcsolatának megtervezése
+	- Különböző HTTP kérések kezelésének kigondolása
+
+3. Adatbázis tervezés:
+	- Adattábla értékek megtervezése
+	- Adatok biztonságos tárolásának, kezelésének tervezése
