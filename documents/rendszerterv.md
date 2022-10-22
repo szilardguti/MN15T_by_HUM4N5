@@ -14,7 +14,7 @@ Megvalósításban törekszünk arra, hogy számítógépes és mobilos felület
 A grafikus megjelenítő felülethez egy szerver oldali alkalmazás fog társulni, ami összeköttetést biztosít az adatbázissal. Ez a backend alkalmazás fogja elvégezni a grafikonok számítását és megjelenítését valamint a szükséges adatokat biztosítja a MNIST tesztekhez.
 A grafikonok és az adatok megfelelő működésének és megjelenítésének tesztelését több felületen is biztosítjuk.
 
-## *Mérföldkövek*
+## **Mérföldkövek**
 
 - [M-00] Dokumentációk megírása.
 - [M-01] Kezdetleges grafikus felület, az adatok bekérésének megvalósítása, adatbázis létrehozása és egy alap web szolgáltatás létrehozása.
@@ -23,7 +23,7 @@ A grafikonok és az adatok megfelelő működésének és megjelenítésének te
 - [M-04] Összesített statisztikák oldalának szerkeztése, megvalósítsa.
 - [M-05] Tesztelés és utolsó bugok kijavítása
 
-## *Ütemterv*
+## **Ütemterv**
 
 1. [M-00] Közös meetingek alkalmával megírt, megbeszélt specifikációk.
 2. [M-01] Megbeszélésen a grafikus felület feladatainak szétosztása, egy becsült idő megállapítása, alap frontend és backend megvalósítása.
@@ -53,7 +53,7 @@ A grafikonok és az adatok megfelelő működésének és megjelenítésének te
 Az adatbázisban tárolt számok között vannak olyanok, amelyek egyszerűbben felismerhetőek, de előfordulnak
 más számokkal könnyen összetéveszthető kézírások is. Szeretnénk ha felhasználónként a kitöltések számával egyenesen arányosan jelenne meg egyre több ilyen megosztó kép, mivel ezekből érdekesebb statisztikákat lehet kinyerni.
 
-*Megvalósítás:*
+**Megvalósítás:**
 
 - Véletlen képválasztás manipulációja: minél több kérdésre válaszol a kitöltő, annál nagyobb eséllyel jelenik meg egy olyan kép, aminél a válasz nem egyértelmű, mindez az előző kitöltések alapján derül ki.
 Minden kép esetén tárolásra kerülnek a hozzá tartozó válaszok. Ha ezekből a tárolt adatokból kimutatható hogy a válaszolók véleménye megegyező, akkor az adott kép kisebb gyakorisággal fog felbukkanni a továbbiakban, míg a kétértelműek többször, ezzel érdekesebbé téve a felmérést.
@@ -65,7 +65,7 @@ Minden kép esetén tárolásra kerülnek a hozzá tartozó válaszok. Ha ezekb�
 
 Amennyiben egy felhasználó az egyértelmű képekre nem a várt eredményt produkálja, az hatással lesz a kép egyértelműségi tényezőjére, így az más felhasználóknál frekventáltabban fog megjelenni.
 
-### *Üzleti folyamatok modellje*
+### **Üzleti folyamatok modellje**
 
 ![uzleti_folyamatok](images4documents/Igenyelt_uzleti_folyamatok.png)
 
