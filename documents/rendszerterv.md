@@ -67,3 +67,13 @@ Az alkalmazás három fő részből áll össze:
 3. Adatbázis tervezés:
 	- Adattábla értékek megtervezése
 	- Adatok biztonságos tárolásának, kezelésének tervezése
+    
+## **Fogalmak**
+
+- **Frontend:** A weboldal interaktív, a felhasználó által hozzáférhető része az alkalmazásnak, csak korlátozott adatot tekinthet meg.
+
+- **Backend:** Az alkalmazás azon része, amely a Frontend-ről érkező adatok feldolgozásáért felelős, az adatbázis felé továbbítja ezeket. 
+
+- **Adatbázis:** Az adatok perzisztens tárolására szolgál, ahonnan a Backend elérheti és felhasználhatja, valamint továbbíthatja a felhaszáló felé.
+	
+- **Perzisztens adattárolás:** Adatok hosszútávú tárolása.
