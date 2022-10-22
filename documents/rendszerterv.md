@@ -184,3 +184,29 @@ CREATE TABLE Tests(
     PRIMARY KEY(TesterID, ImageID)
 );
 ```
+
+## **Tesztterv**
+A tesztelésre folyamatosan sor kerül a fejlesztés alatt, valamint annak befejeztével is.
+- Egységtesztek írása függvényekhez
+- Kész alkalmazás tesztelése böngészőben
+- Majdnem kész rendszer teszteltetése Alfa tesztelőkkel
+
+A tesztelés célja, hogy a megtervezett funkciók rendeltetésszerűen működjenek. A tesztet tesztelő teszteli a tesztelő tesztkörnyezetben, 
+hogy a tesztesetek kiteszetelve teszten kitesznek-e egy teljes tesztet.
+
+#### Főbb tesztrészek:
+- **Egységteszt**: A forráskód egységeit a kapcsolódó vezérlő adatokkal, a felhasználási-és a működtető eljárásokkal 
+együtt tesztelik annak meghatározására, hogy azok elérik-e kitűzött céljukat. 
+Automatizáltak, előre megadott tesztadatokkal, minél nagyobb dimenziókban fedjék le a lehetséges eseteket.
+
+- **Tesztadat**: Bizonyos adatok megerősítő módon használhatók fel egy adott funkcióhoz adott bemeneti adat készlet az elvárt eredményt adja-e.
+Más adatok felhasználhatók arra, hogy kivizsgálják a program azon képességét, hogy hogyan reagál a szokatlan, rendkívüli, kivételes vagy váratlan adatbevitelre.
+
+- **Funkcionális teszt**: A szoftver rendszert a funkcionális követelmények / specifikációk alapján ellenőrzi.
+A funkcionális tesztek célja a szoftveralkalmazás minden funkciójának tesztelése megfelelő bemenet biztosításával,
+a kimenetnek a funkcionális követelményekkel való összehasonlításával.
+
+- **Alfa teszt**: Az alfa tesztelést egy kis szakértői csoport végzi, aki tudja, hogyan találhat szoftverhibákat.
+Bár a csapat csak néhány tagból áll, szakértelmük lehetővé teszi számukra, hogy elkapják a problémák többségét úgy, hogy a szoftvert minden olyan forgatókönyv segítségével be lehet állítani, és megpróbálhatják a bemenetek bármilyen kombinációját, hogy a szoftvert hibaivá tegyék.
+Esetünkben is szakértők, egy közös discord channel tagjai próbálják meg minél kreatívabban észlelni a rendszer esetleges hiányait vagy
+nagyobb hibáit.
