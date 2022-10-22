@@ -140,3 +140,47 @@ Az alkalmazás három fő részből áll össze:
 - **Adatbázis:** Az adatok perzisztens tárolására szolgál, ahonnan a Backend elérheti és felhasználhatja, valamint továbbíthatja a felhaszáló felé.
 	
 - **Perzisztens adattárolás:** Adatok hosszútávú tárolása.
+
+## **Adatbázisterv**
+
+![adatbazis modellje](./images4documents/adatbazis_modell.png)
+
+### *Adatbázist legeneráló SQL script*
+
+```sql
+-- Tesztelők táblájának létrehozása
+CREATE TABLE Tester(
+    ID INT NOT NULL AUTO_INCREMENT,
+    Age INT NOT NULL,
+    Gender CHAR(1) NOT NULL COMMENT 'f-m-o',
+    Studies VARCHAR(80) NOT NULL,
+    PRIMARY KEY(`ID`)
+);
+
+-- MNIST képek táblájának létrehozása
+CREATE TABLE MNIST_Image(
+    ID BIGINT NOT NULL AUTO_INCREMENT,
+    RealValue TINYINT NOT NULL,
+    Vote_0 INT NOT NULL,
+    Vote_1 INT NOT NULL,
+    Vote_2 INT NOT NULL,
+    Vote_3 INT NOT NULL,
+    Vote_4 INT NOT NULL,
+    Vote_5 INT NOT NULL,
+    Vote_6 INT NOT NULL,
+    Vote_7 INT NOT NULL,
+    Vote_8 INT NOT NULL,
+    Vote_9 INT NOT NULL,
+    Deviation INT NOT NULL,
+    ImagePath VARCHAR(256) NOT NULL,
+    PRIMARY KEY(`ID`)
+);
+
+-- Asszociációs tábla létrehozása
+CREATE TABLE Tests(
+    TesterID INT NOT NULL REFERENCES Tester(ID),
+    ImageID INT NOT NULL REFERENCES MNIST_Image(ID),
+    TestDat DATE NOT NULL,
+    PRIMARY KEY(TesterID, ImageID)
+);
+```
