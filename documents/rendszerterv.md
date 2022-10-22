@@ -31,3 +31,23 @@ A grafikonok és az adatok megfelelő működésének és megjelenítésének te
 4. [M-03] A grafikonok megvalósításához szükséges technológiák megismerése. Kezdetleges váz összerakása.
 5. [M-04] Kezdetleges váz kibővítése egy összesített statisztikákat mutató oldalra.
 6. [M-05] Tesztelés és végleges verzió elkészítése.
+
+## **Fizikai környezet**
+
+Az alkalmazás futtatására valamilyen böngészőre van szükség pl:
+- Google Chrome
+- Mozilla Firefox
+- Microsoft Edge
+
+Webre való fejlesztés miatt frontend és backend részekre osztjuk a fejlesztési környezteket.
+
+##### Frontend:
+- Visual Studio Code
+- Windows Notepad
+- Notepad++
+
+##### Backend:
+- Node.js
+- Visual Studio Code
+- MySQL
+
