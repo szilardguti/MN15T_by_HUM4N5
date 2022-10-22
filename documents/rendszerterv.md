@@ -32,6 +32,16 @@ A grafikonok és az adatok megfelelő működésének és megjelenítésének te
 5. [M-04] Kezdetleges váz kibővítése egy összesített statisztikákat mutató oldalra.
 6. [M-05] Tesztelés és végleges verzió elkészítése.
 
+## **Követelmények**
+
+- [K01] Hordozhatóság
+- [K02] Reszponzív dizájn
+- [K03] Rendszerfüggetlenség
+- [K04] Gyors működés
+- [K05] Könnyű kezelhetőség
+- [K06] A weboldal telefonon is megjeleníthető legyen
+- [K07] Gamifikáció/Játékosítás
+
 ## **Fizikai környezet**
 
 Az alkalmazás futtatására valamilyen böngészőre van szükség pl:
