@@ -23,3 +23,11 @@ A grafikonok és az adatok megfelelő működésének és megjelenítésének te
 - [M-04] Összesített statisztikák oldalának szerkeztése, megvalósítsa.
 - [M-05] Tesztelés és utolsó bugok kijavítása
 
+## *Ütemterv*
+
+1. [M-00] Közös meetingek alkalmával megírt, megbeszélt specifikációk.
+2. [M-01] Megbeszélésen a grafikus felület feladatainak szétosztása, egy becsült idő megállapítása, alap frontend és backend megvalósítása.
+3. [M-02] MNIST tesztek elvégzésére alkalmas prototípus megírása. (Még bugokat és hibákat tartalmazhat)
+4. [M-03] A grafikonok megvalósításához szükséges technológiák megismerése. Kezdetleges váz összerakása.
+5. [M-04] Kezdetleges váz kibővítése egy összesített statisztikákat mutató oldalra.
+6. [M-05] Tesztelés és végleges verzió elkészítése.
