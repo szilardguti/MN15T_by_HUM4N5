@@ -13,3 +13,13 @@ Megvalósításban törekszünk arra, hogy számítógépes és mobilos felület
 
 A grafikus megjelenítő felülethez egy szerver oldali alkalmazás fog társulni, ami összeköttetést biztosít az adatbázissal. Ez a backend alkalmazás fogja elvégezni a grafikonok számítását és megjelenítését valamint a szükséges adatokat biztosítja a MNIST tesztekhez.
 A grafikonok és az adatok megfelelő működésének és megjelenítésének tesztelését több felületen is biztosítjuk.
+
+## *Mérföldkövek*
+
+- [M-00] Dokumentációk megírása.
+- [M-01] Kezdetleges grafikus felület, az adatok bekérésének megvalósítása, adatbázis létrehozása és egy alap web szolgáltatás létrehozása.
+- [M-02] MNIST tesztek elvégzésére szükséges rendszerek kialakítása (prototípus).
+- [M-03] Alapvető grafikonok tervezése és előkészítése.
+- [M-04] Összesített statisztikák oldalának szerkeztése, megvalósítsa.
+- [M-05] Tesztelés és utolsó bugok kijavítása
+
