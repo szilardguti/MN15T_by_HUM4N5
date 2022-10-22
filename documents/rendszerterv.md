@@ -69,6 +69,22 @@ Amennyiben egy felhasználó az egyértelmű képekre nem a várt eredményt pro
 
 ![uzleti_folyamatok](images4documents/Igenyelt_uzleti_folyamatok.png)
 
+## **Funkcionális terv**
+
+- A fejlesztés html, css és javascript nyelven történik.
+
+- A felhasználó adatai:
+    - Kor: A felhasználó korát egy html input kéri be
+    - Nem: A felhasználó nemének meghatározása egy radio típusú html form használatának segítségével valósul meg
+    - Legmagasabb iskolai végzettség bekérése egy lenyíló listával valósul meg
+
+- Statisztikák:
+    - Nem alapján.
+    - Korcsoportok alapján.
+    - Képre specifikus statisztika
+    - Képek többértelműsége alapján
+    - Egyhuzamban kitöltöttek alapján
+
 ## **Követelmények**
 
 - [K01] Hordozhatóság
