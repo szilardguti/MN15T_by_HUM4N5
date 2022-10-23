@@ -179,8 +179,8 @@ CREATE TABLE MNIST_Image(
 -- Asszociációs tábla létrehozása
 CREATE TABLE Tests(
     TesterID INT NOT NULL REFERENCES Tester(ID),
-    ImageID INT NOT NULL REFERENCES MNIST_Image(ID),
-    TestDat DATE NOT NULL,
+    ImageID BIGINT NOT NULL REFERENCES MNIST_Image(ID),
+    TestDate DATE NOT NULL,
     PRIMARY KEY(TesterID, ImageID)
 );
 ```
