@@ -14,7 +14,7 @@ Megvalósításban törekszünk arra, hogy számítógépes és mobilos felület
 A grafikus megjelenítő felülethez egy szerver oldali alkalmazás fog társulni, ami összeköttetést biztosít az adatbázissal. Ez a backend alkalmazás fogja elvégezni a grafikonok számítását és megjelenítését valamint a szükséges adatokat biztosítja a MNIST tesztekhez.
 A grafikonok és az adatok megfelelő működésének és megjelenítésének tesztelését több felületen is biztosítjuk.
 
-## *Mérföldkövek*
+## **Mérföldkövek**
 
 - [M-00] Dokumentációk megírása.
 - [M-01] Kezdetleges grafikus felület, az adatok bekérésének megvalósítása, adatbázis létrehozása és egy alap web szolgáltatás létrehozása.
@@ -23,7 +23,7 @@ A grafikonok és az adatok megfelelő működésének és megjelenítésének te
 - [M-04] Összesített statisztikák oldalának szerkeztése, megvalósítsa.
 - [M-05] Tesztelés és utolsó bugok kijavítása
 
-## *Ütemterv*
+## **Ütemterv**
 
 1. [M-00] Közös meetingek alkalmával megírt, megbeszélt specifikációk.
 2. [M-01] Megbeszélésen a grafikus felület feladatainak szétosztása, egy becsült idő megállapítása, alap frontend és backend megvalósítása.
@@ -53,7 +53,7 @@ A grafikonok és az adatok megfelelő működésének és megjelenítésének te
 Az adatbázisban tárolt számok között vannak olyanok, amelyek egyszerűbben felismerhetőek, de előfordulnak
 más számokkal könnyen összetéveszthető kézírások is. Szeretnénk ha felhasználónként a kitöltések számával egyenesen arányosan jelenne meg egyre több ilyen megosztó kép, mivel ezekből érdekesebb statisztikákat lehet kinyerni.
 
-*Megvalósítás:*
+**Megvalósítás:**
 
 - Véletlen képválasztás manipulációja: minél több kérdésre válaszol a kitöltő, annál nagyobb eséllyel jelenik meg egy olyan kép, aminél a válasz nem egyértelmű, mindez az előző kitöltések alapján derül ki.
 Minden kép esetén tárolásra kerülnek a hozzá tartozó válaszok. Ha ezekből a tárolt adatokból kimutatható hogy a válaszolók véleménye megegyező, akkor az adott kép kisebb gyakorisággal fog felbukkanni a továbbiakban, míg a kétértelműek többször, ezzel érdekesebbé téve a felmérést.
@@ -65,7 +65,7 @@ Minden kép esetén tárolásra kerülnek a hozzá tartozó válaszok. Ha ezekb�
 
 Amennyiben egy felhasználó az egyértelmű képekre nem a várt eredményt produkálja, az hatással lesz a kép egyértelműségi tényezőjére, így az más felhasználóknál frekventáltabban fog megjelenni.
 
-### *Üzleti folyamatok modellje*
+### **Üzleti folyamatok modellje**
 
 ![uzleti_folyamatok](images4documents/Igenyelt_uzleti_folyamatok.png)
 
@@ -184,3 +184,29 @@ CREATE TABLE Tests(
     PRIMARY KEY(TesterID, ImageID)
 );
 ```
+
+## **Tesztterv**
+A tesztelésre folyamatosan sor kerül a fejlesztés alatt, valamint annak befejeztével is.
+- Egységtesztek írása függvényekhez
+- Kész alkalmazás tesztelése böngészőben
+- Majdnem kész rendszer teszteltetése Alfa tesztelőkkel
+
+A tesztelés célja, hogy a megtervezett funkciók rendeltetésszerűen működjenek. A tesztet tesztelő teszteli a tesztelő tesztkörnyezetben, 
+hogy a tesztesetek kiteszetelve teszten kitesznek-e egy teljes tesztet.
+
+#### Főbb tesztrészek:
+- **Egységteszt**: A forráskód egységeit a kapcsolódó vezérlő adatokkal, a felhasználási-és a működtető eljárásokkal 
+együtt tesztelik annak meghatározására, hogy azok elérik-e kitűzött céljukat. 
+Automatizáltak, előre megadott tesztadatokkal, minél nagyobb dimenziókban fedjék le a lehetséges eseteket.
+
+- **Tesztadat**: Bizonyos adatok megerősítő módon használhatók fel egy adott funkcióhoz adott bemeneti adat készlet az elvárt eredményt adja-e.
+Más adatok felhasználhatók arra, hogy kivizsgálják a program azon képességét, hogy hogyan reagál a szokatlan, rendkívüli, kivételes vagy váratlan adatbevitelre.
+
+- **Funkcionális teszt**: A szoftver rendszert a funkcionális követelmények / specifikációk alapján ellenőrzi.
+A funkcionális tesztek célja a szoftveralkalmazás minden funkciójának tesztelése megfelelő bemenet biztosításával,
+a kimenetnek a funkcionális követelményekkel való összehasonlításával.
+
+- **Alfa teszt**: Az alfa tesztelést egy kis szakértői csoport végzi, aki tudja, hogyan találhat szoftverhibákat.
+Bár a csapat csak néhány tagból áll, szakértelmük lehetővé teszi számukra, hogy elkapják a problémák többségét úgy, hogy a szoftvert minden olyan forgatókönyv segítségével be lehet állítani, és megpróbálhatják a bemenetek bármilyen kombinációját, hogy a szoftvert hibaivá tegyék.
+Esetünkben is szakértők, egy közös discord channel tagjai próbálják meg minél kreatívabban észlelni a rendszer esetleges hiányait vagy
+nagyobb hibáit.
