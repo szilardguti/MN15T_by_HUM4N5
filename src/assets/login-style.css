@@ -1,0 +1,42 @@
+#main {
+    background-color: #72412f;
+}
+
+#page-title {
+    text-align: center;
+    padding-top: 3%;
+}
+
+#login-panel {
+    color: white;
+    padding: 50px;
+    border: 5px solid #263238;
+    border-radius: 25px;
+    background-color: #263238;
+    width: 40%;
+    margin: auto;
+    margin-top: 6%;
+}
+
+#choose-gender {
+    margin-left: 2%;
+    margin-bottom: 2%;
+    margin-top: -2%;
+}
+
+#age {
+    margin-left: 2%;
+    margin-bottom: 2%;
+    margin-top: -2%;
+}
+
+.suli {
+    margin-left: 2%;
+    margin-bottom: 2%;
+    margin-top: -2%;
+}
+
+.loginbutton {
+    margin-left: 87%;
+    margin-top: 2%;
+}

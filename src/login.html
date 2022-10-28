@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Üdvözöljük</title>
+    <link rel="stylesheet" href="assets/login-style.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+<body id="main">
+    <header id="page-title">MN15T_by_HUM4N5</header>
+    <div id="login-panel">
+        <p><b>Kérjük adjon meg néhány adatot a teszt kitöltéséhez</b></p>
+        <p>Nem:</p>
+        <form id="choose-gender">
+            <input type="radio" id="female" name="choose-gender" value="Nő">
+            <label for="female">Nő</label><br>
+            <input type="radio" id="male" name="choose-gender" value="Férfi">
+            <label for="male">Férfi</label><br>
+        </form>
+
+        <p>Életkor:</p>
+        <form id="age">
+            <input type="number" min="1" max="99" required>
+        </form>
+        <p>Legmagasabb iskolai végzettség:</p>
+        <select class="form-select suli" aria-label="Default select example">
+            <option selected>Kérem válasszon</option>
+            <option value="1">Általános iskola</option>
+            <option value="2">Gimnázium/Szakközépiskola</option>
+            <option value="3">Egyetem/Főiskola</option>
+        </select>
+        <a href="test.html">
+            <button type="button" class="btn btn-success loginbutton">Tovább</button>
+        </a>
+    </div>
+    <div id="graphs">
+    </div>
+</body>
+</html>
