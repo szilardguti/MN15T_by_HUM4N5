@@ -1,0 +1,16 @@
+{
+  "name": "mnist_backend",
+  "version": "\t",
+  "description": "backend web API for MNIST testing by humans project",
+  "main": "index.js",
+  "author": "erdeiakos, laci730, szilardguti",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "mysql": "^2.18.1"
+  },
+  "scripts": {
+    "start": "node ./index.js"
+  }
+}
