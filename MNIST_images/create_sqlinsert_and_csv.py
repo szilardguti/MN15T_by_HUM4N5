@@ -73,6 +73,8 @@ if __name__ == "__main__":
     indexVal = 0
     print("="*20 + "csv creation started" + "="*20)
 
+    fullData = []
+
     with open(os.path.dirname(os.path.realpath(__file__)) +'\\MNIST_image_data.csv', 'w', encoding='UTF8', newline='') as csv_file:
         writer = csv.writer(csv_file)
 
@@ -81,7 +83,25 @@ if __name__ == "__main__":
 
         data, indexVal = parse_images_tocsv("testing", indexVal)
         writer.writerows(data)
+        for val in data:
+            fullData.append(val)
+
         data, indexVal = parse_images_tocsv("training", indexVal)
         writer.writerows(data)
+        for val in data:
+            fullData.append(val)
 
     print("="*20 + "csv creation ended" + "="*20)
+
+print(fullData[0])
+for index in range(0,35):
+    startIndex = index * 2000
+    vals = []
+    for temp_val in fullData[startIndex:startIndex+2000]:
+        vals.append(temp_val)
+
+    with open(os.path.dirname(os.path.realpath(__file__)) +'\\partial_csv\\MNIST_image_data_' + str(index+1) + '.csv', 'w', encoding='UTF8', newline='') as csv_file:
+        writer = csv.writer(csv_file)
+
+        writer.writerows(vals)
+        print('csv num: ' + str(index+1) + ' done writing!')
