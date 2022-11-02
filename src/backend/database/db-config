@@ -1,0 +1,19 @@
+let dbconfig = {
+    host: "sql7.freemysqlhosting.net",
+    user: "sql7530299",
+    password: "",
+    database: "sql7530299",
+    connectTimeout: 100000, 
+    acquireTimeout: 100000
+};
+
+const setPWforDBconfig = ( pw, _callback ) => {
+    dbconfig.password = pw;
+    console.log('DB config initalised');
+    _callback();
+}
+
+module.exports = {
+    setPWforDBconfig,
+    dbconfig: dbconfig
+}
