@@ -18,3 +18,9 @@
 .col {
     padding: 5px;
 }
+
+.graphs {
+    display: flex;
+    width: 400px;
+    height: 400px;
+}
