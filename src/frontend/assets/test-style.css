@@ -21,6 +21,18 @@
 
 .graphs {
     display: flex;
-    width: 400px;
-    height: 400px;
+    width: 500px;
+    height: 500px;
+    margin: auto;  
+}
+.next{
+    margin-left: 83%;
+}
+.right-side{
+    position: absolute;
+    margin-left: 50%;
+    top:20%;
+}
+.container{
+    display:grid;
 }
