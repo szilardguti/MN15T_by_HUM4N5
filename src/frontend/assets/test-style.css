@@ -10,6 +10,17 @@
     width: 40%;
 }
 
+#answer-box {
+    width: 100px;
+    display: flex;
+    margin-left: 40%;
+}
+
+#chosen-value {
+    margin-left: 40%;
+    font-weight: bold;
+}
+
 .numbers {
     width: 75%;
     background-color: #72412f;
@@ -25,14 +36,17 @@
     height: 500px;
     margin: auto;  
 }
+
 .next{
     margin-left: 83%;
 }
+
 .right-side{
     position: absolute;
     margin-left: 50%;
     top:20%;
 }
+
 .container{
     display:grid;
 }
