@@ -43,8 +43,9 @@
 
 .right-side{
     position: absolute;
-    margin-left: 50%;
-    top:20%;
+    margin-top: 100px;
+    width: 40%;
+    float: right;
 }
 
 .container{

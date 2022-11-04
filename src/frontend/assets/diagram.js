@@ -1,4 +1,4 @@
-const ctx = document.getElementById('myChart');
+/* const ctx = document.getElementById('myChart');
 
 const myChart = new Chart(ctx, {
     type: 'bar',
@@ -21,3 +21,4 @@ const myChart = new Chart(ctx, {
         indexAxis: 'y',
     }
 });
+ */

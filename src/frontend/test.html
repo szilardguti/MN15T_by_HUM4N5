@@ -62,20 +62,13 @@
                         <button type="button" class="numbers btn btn-dark" onclick="inputValue(0)">0</button>
                         </div>
                         <div class="col">
-                        <button type="button" class="numbers btn btn-dark">Kész</button> <!-- TODO: js függvény -->
+                        <button type="button" class="numbers btn btn-dark" onclick="submitVote()">Kész</button> <!-- TODO: js függvény -->
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="right-side">
-            <div class="graphs">
-                <canvas id="myChart" width="400" height="400"></canvas>
-            </div>
-            <div>
-                <button type="button" class="next btn btn-dark">Tovább</button>
-            </div>
-        </div>
+        <div id="right-side"></div> <!-- TODO:valahogy megkéne csinálni, hogy jól nézzen ki újra -->
     </div>
     <script src="./assets/test-input-buttons.js"></script>
     <script src="./assets/diagram.js"></script>
