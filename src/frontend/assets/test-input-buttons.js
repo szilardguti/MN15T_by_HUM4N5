@@ -1,3 +1,5 @@
+var isActive = false;
+
 function inputValue(value) {
     const field = document.getElementById("chosen-value")
     if (field.innerHTML === ""){
@@ -12,30 +14,31 @@ function deleteValue() {
 function submitVote() {
     const field = document.getElementById("chosen-value")
     let rightside = document.getElementById("right-side")
-    if(field.innerHTML === "")
+
+    if(field.innerHTML === "" || isActive == true)
     {
         alert("He");
     }
     else{
-        graph = document.createElement("div")
-        graph.className = "graphs"
+        graph = document.c/* reateElement("div")
+        graph.className = "graphs" */
 
         div = document.createElement("div")
 
-        canvas = document.createElement("canvas")
+      /*   canvas = document.createElement("canvas")
         canvas.id = "myChart"
         canvas.width="400" 
-        canvas.height="400"
+        canvas.height="400" */
 
         next = document.createElement("button")
         next.className="next btn btn-dark"
         next.innerHTML="Tovább"
         next.type="button"
 
-        rightside.appendChild(graph)
+        /* rightside.appendChild(graph) */
         rightside.appendChild(div)
         div.appendChild(next)
-        graph.appendChild(canvas)
+       /*  graph.appendChild(canvas) */
 
         const ctx = document.getElementById('myChart');
 
@@ -60,6 +63,8 @@ function submitVote() {
                 indexAxis: 'y',
             }
         });
+
+        isActive = true;
 
     }
 }
