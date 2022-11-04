@@ -52,14 +52,11 @@ body {
     float: none; width: auto;
 }
 
-/* .container{
-    display:grid;
-} */
-
 .container{
     background-color: rgb(227,218,201);
     border-radius: 10px;
 }
+
 #container{
     background-color: rgba(209,190,168,0.9);
     height: 700px;
