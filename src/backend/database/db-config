@@ -1,8 +1,8 @@
 let dbconfig = {
     host: "sql7.freemysqlhosting.net",
-    user: "sql7530299",
+    user: "sql7547525",
     password: "",
-    database: "sql7530299",
+    database: "sql7547525",
     connectTimeout: 100000, 
     acquireTimeout: 100000
 };
