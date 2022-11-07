@@ -2,7 +2,7 @@ const { Tooltip } = require("chart.js");
 
 var isActive = false;
 
-function inputValue(value) {
+const inputValue = (value) => {
     const field = document.getElementById("chosen-value")
     if (field.innerHTML === ""){
         field.innerHTML = value;
@@ -14,6 +14,15 @@ function deleteValue() {
 }
 
 function submitVote() {
+    fetch('http://localhost:3030/images/1')
+        .then(response => response.json())
+        .then(res_json => {
+            res_data = res_json['0'];
+            generateGraph(res_data);
+        });
+}
+
+function generateGraph(img_data) {
     const field = document.getElementById("chosen-value")
     let rightside = document.getElementById("right-side")
 
@@ -47,10 +56,12 @@ function submitVote() {
         const myChart = new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'],
+                labels: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9',],
                 datasets: [{
                     label: 'Szavazatok eloszlása',
-                    data: [12, 19, 3, 5, 2, 3],
+                    data: [img_data.Vote_0, img_data.Vote_1, img_data.Vote_2,
+                           img_data.Vote_3, img_data.Vote_4, img_data.Vote_5,
+                           img_data.Vote_6, img_data.Vote_7, img_data.Vote_8, img_data.Vote_9,],
                     backgroundColor: [
                         'rgba(255, 99, 132, 1)',
                         'rgba(54, 162, 235, 1)',
@@ -83,3 +94,9 @@ function submitVote() {
 
     }
 }
+function getStandardDeviation (array) {
+    const n = array.length
+    const mean = array.reduce((a, b) => a + b) / n
+    return Math.sqrt(array.map(x => Math.pow(x - mean, 2)).reduce((a, b) => a + b) / n)
+  } 
+  
