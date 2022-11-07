@@ -27,7 +27,7 @@ function returnAnyRandomPic(list_of_done, callback)
     console.log("xd")
     let randomn = 0;
     do{
-        randomn = Math.floor(Math.random() * 4000)+1
+        randomn = Math.floor(Math.random() * 10000)+1
     }while (list_of_done.includes(randomn));
     fetch('http://localhost:3030/images/' + randomn)
         .then (response => response.json())
