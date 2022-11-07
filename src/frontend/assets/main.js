@@ -1,4 +1,10 @@
 import {randomPic} from "./randomPic.js"
+import { inputValue, deleteValue, submitVote } from './test-input-buttons.js'
 
+// Initialize random picture when page is loaded
 randomPic(100,1,[],(res)=>{console.log(res)})
- /* console.log(asd) */
+
+// Bind imports
+window.inputValue = inputValue;
+window.deleteValue = deleteValue;
+window.submitVote = submitVote;

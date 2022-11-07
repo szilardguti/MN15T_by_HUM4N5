@@ -1,23 +1,21 @@
-const { Tooltip } = require("chart.js");
-
 var isActive = false;
 
-const inputValue = (value) => {
+export function inputValue(value) {
     const field = document.getElementById("chosen-value")
     if (field.innerHTML === ""){
         field.innerHTML = value;
     }
 }
 
-function deleteValue() {
+export function deleteValue() {
     document.getElementById("chosen-value").innerHTML = ""
 }
 
-function submitVote() {
+export function submitVote() {
     fetch('http://localhost:3030/images/1')
         .then(response => response.json())
         .then(res_json => {
-            res_data = res_json['0'];
+            let res_data = res_json['0'];
             generateGraph(res_data);
         });
 }
@@ -31,17 +29,17 @@ function generateGraph(img_data) {
         alert("He");
     }
     else{
-        graph = document.c/* reateElement("div")
+        const graph = document.c/* reateElement("div")
         graph.className = "graphs" */
 
-        div = document.getElementById("div")
+        const div = document.getElementById("div")
 
       /*   canvas = document.createElement("canvas")
         canvas.id = "myChart"
         canvas.width="400" 
         canvas.height="400" */
 
-        next = document.createElement("button")
+        let next = document.createElement("button")
         next.className="next btn btn-dark"
         next.innerHTML="Tovább"
         next.type="button"
