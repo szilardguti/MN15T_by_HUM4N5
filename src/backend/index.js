@@ -98,4 +98,16 @@ app.get('/tester/:testerId/highdeviation', (req, res) => {
     })
 })
 
+// ===== MNIST image =====
+
+app.get('/MNIST_images/MNIST-JPG-testing/:val/:imgId.jpg', (req, res) => {
+    let value = req.params.val;
+    let imgId = req.params.imgId;
+
+    var fs = require('fs');
+
+    var imageAsBase64 = fs.readFileSync('../../MNIST_images/MNIST-JPG-testing/' + value + '/' + imgId + '.jpg', 'base64');
+    res.end(imageAsBase64);
+})
+
 // Controller section END
