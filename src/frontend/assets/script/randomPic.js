@@ -29,8 +29,6 @@ function returnAnyRandomPic(list_of_done, callback)
         .then (response => response.json())
         .then(res_json => {
             let res_data = res_json['0'];
-            callback(res_data);
+            callback(res_data['ImagePath']);
         });
-    document.getElementById("mnist-img").src = ""
-    console.log(randomn)
 }
