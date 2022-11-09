@@ -1,16 +1,5 @@
 var isActive = false;
 
-export function inputValue(value) {
-    const field = document.getElementById("chosen-value")
-    if (field.innerHTML === ""){
-        field.innerHTML = value;
-    }
-}
-
-export function deleteValue() {
-    document.getElementById("chosen-value").innerHTML = ""
-}
-
 export function submitVote() {
     fetch('http://localhost:3030/images/1')
         .then(response => response.json())
@@ -29,25 +18,16 @@ function generateGraph(img_data) {
         alert("He");
     }
     else{
-        const graph = document.c/* reateElement("div")
-        graph.className = "graphs" */
 
         const div = document.getElementById("div")
 
-      /*   canvas = document.createElement("canvas")
-        canvas.id = "myChart"
-        canvas.width="400" 
-        canvas.height="400" */
 
         let next = document.createElement("button")
         next.className="next btn btn-dark"
         next.innerHTML="Tovább"
         next.type="button"
 
-        /* rightside.appendChild(graph) */
-        /* rightside.appendChild(div) */
         div.appendChild(next)
-       /*  graph.appendChild(canvas) */
 
         const ctx = document.getElementById('myChart');
 
@@ -76,7 +56,6 @@ function generateGraph(img_data) {
                 plugins: {
                     legend: {
                         labels: {
-                            // This more specific font property overrides the global property
                             font: {
                                 size: 14,
                                 weight: 5
