@@ -1,16 +1,5 @@
 var isActive = false;
 
-export function inputValue(value) {
-    const field = document.getElementById("chosen-value")
-    if (field.innerHTML === ""){
-        field.innerHTML = value;
-    }
-}
-
-export function deleteValue() {
-    document.getElementById("chosen-value").innerHTML = ""
-}
-
 export function submitVote() {
     fetch('http://localhost:3030/images/1')
         .then(response => response.json())
@@ -29,7 +18,7 @@ function generateGraph(img_data) {
         alert("He");
     }
     else{
-        const graph = document.c/* reateElement("div")
+        /*const graph = document.createElement("div")
         graph.className = "graphs" */
 
         const div = document.getElementById("div")
