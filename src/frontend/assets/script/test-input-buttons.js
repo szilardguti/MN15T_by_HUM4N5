@@ -16,8 +16,6 @@ export function submitVote() {
 function generateGraph(img_data) {
     const field = document.getElementById("chosen-value")
     field.value = field.innerHTML
-    console.log(realv)
-    let rightside = document.getElementById("right-side")
 
     if(field.innerHTML === "" || isActive == true || field.value != realv )
     {
