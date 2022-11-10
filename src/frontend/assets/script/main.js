@@ -9,7 +9,6 @@ randomPic(100,1,[],(res)=>{
         .then(imgb64 => {
             document.getElementById("mnist-img").src = "data:image/jpg;base64," + imgb64;
         })
-
 });
 
 // Bind imports
