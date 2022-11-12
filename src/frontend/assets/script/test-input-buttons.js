@@ -4,10 +4,9 @@ var isActive = false;
 
 export function submitVote() {
 
-    let votok = '';
     const field = document.getElementById("chosen-value")
     field.value = field.innerHTML
-    let vote = 0;
+
 
     fetch('http://localhost:3030/images/' + id + "/vote/" + field.value, {
         method: "PUT",
@@ -24,22 +23,29 @@ export function submitVote() {
         .then(data => console.log(data))
         .catch(error => console.log(error))
 
-    /*  .then(response => response.json())
-     .then(res_json => {
-         let res_data = res_json['0'];
-     }); */
+    fetch('http://localhost:3030/images/'+id)
+    .then(response => response.json())
+    .then(res_json => {
+        let res_data = res_json['0'];
+        generateGraph(res_data);})
 
-
-   .then (fetch('http://localhost:3030/images/'+id)
-        .then(response => response.json())
-        .then(res_json => {
-            let res_data = res_json['0'];
-            generateGraph(res_data);
-        }))
+       
 }
 
 function generateGraph(img_data) {
     const field = document.getElementById("chosen-value")
+    field.value = field.innerHTML
+
+    if(field.value == 0){img_data.Vote_0 = img_data.Vote_0+1;}
+    if(field.value == 1){img_data.Vote_1 = img_data.Vote_1+1;}
+    if(field.value == 2){img_data.Vote_2 = img_data.Vote_2+1;}
+    if(field.value == 3){img_data.Vote_3 = img_data.Vote_3+1;}
+    if(field.value == 4){img_data.Vote_4 = img_data.Vote_4+1;}
+    if(field.value == 5){img_data.Vote_5 = img_data.Vote_5+1;}
+    if(field.value == 6){img_data.Vote_6 = img_data.Vote_6+1;}
+    if(field.value == 7){img_data.Vote_7 = img_data.Vote_7+1;}
+    if(field.value == 8){img_data.Vote_8 = img_data.Vote_8+1;}
+    if(field.value == 9){img_data.Vote_9 = img_data.Vote_9+1;}
 
     if (field.innerHTML === "" || isActive == true) {
         alert("He");
