@@ -1,4 +1,4 @@
-export var asd=0;
+export var id=0;
 
 export function randomPic(solved, testerId, list_of_done, callback) {
     let randomn = Math.floor(Math.random() * 101);
@@ -33,6 +33,7 @@ function returnAnyRandomPic(list_of_done, callback)
             let res_data = res_json['0'];
             callback(res_data['ImagePath']);
             console.log(res_data['ImagePath'])
+            console.log(randomn)
         });
-    asd=randomn;
+    id=randomn;
 }

@@ -1,23 +1,49 @@
-import {asd} from "./randomPic.js"
+import {id} from "./randomPic.js"
 
 var isActive = false;
-var realv = 0;
 
 export function submitVote() {
-    fetch('http://localhost:3030/images/'+asd)
+
+    let votok = '';
+    const field = document.getElementById("chosen-value")
+    field.value = field.innerHTML
+    let vote = 0;
+ 
+    fetch('http://localhost:3030/images/'+ id +"/vote/"+field.value, {
+        method: "PUT", 
+        headers: {
+            'Content-type': 'application/json'
+        },
+    })
+    .then(res => {
+        if (res.ok) { console.log("HTTP request successful") }
+        else { console.log("HTTP request unsuccessful") }
+        return res
+    })
+    .then(res => res.json())
+    .then(data => console.log(data))
+    .catch(error => console.log(error))
+    
+   /*  .then(response => response.json())
+    .then(res_json => {
+        let res_data = res_json['0'];
+    }); */
+
+
+    fetch('http://localhost:3030/images/'+id)
         .then(response => response.json())
         .then(res_json => {
             let res_data = res_json['0'];
-            realv = res_data['RealValue']
             generateGraph(res_data);
         });
 }
 
 function generateGraph(img_data) {
+    console.log(img_data)
     const field = document.getElementById("chosen-value")
     field.value = field.innerHTML
 
-    if(field.innerHTML === "" || isActive == true || field.value != realv )
+    if(field.innerHTML === "" || isActive == true)
     {
         alert("He");
     }
