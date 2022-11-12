@@ -1,4 +1,4 @@
-import {id} from "./randomPic.js"
+import { id } from "./randomPic.js"
 
 var isActive = false;
 
@@ -8,29 +8,29 @@ export function submitVote() {
     const field = document.getElementById("chosen-value")
     field.value = field.innerHTML
     let vote = 0;
- 
-    fetch('http://localhost:3030/images/'+ id +"/vote/"+field.value, {
-        method: "PUT", 
+
+    fetch('http://localhost:3030/images/' + id + "/vote/" + field.value, {
+        method: "PUT",
         headers: {
             'Content-type': 'application/json'
         },
     })
-    .then(res => {
-        if (res.ok) { console.log("HTTP request successful") }
-        else { console.log("HTTP request unsuccessful") }
-        return res
-    })
-    .then(res => res.json())
-    .then(data => console.log(data))
-    .catch(error => console.log(error))
-    
-   /*  .then(response => response.json())
-    .then(res_json => {
-        let res_data = res_json['0'];
-    }); */
+        .then(res => {
+            if (res.ok) { console.log("HTTP request successful") }
+            else { console.log("HTTP request unsuccessful") }
+            return res
+        })
+        .then(res => res.json())
+        .then(data => console.log(data))
+        .catch(error => console.log(error))
+
+    /*  .then(response => response.json())
+     .then(res_json => {
+         let res_data = res_json['0'];
+     }); */
 
 
-    fetch('http://localhost:3030/images/'+id)
+    fetch('http://localhost:3030/images/' + id)
         .then(response => response.json())
         .then(res_json => {
             let res_data = res_json['0'];
@@ -39,25 +39,19 @@ export function submitVote() {
 }
 
 function generateGraph(img_data) {
-    console.log(img_data)
     const field = document.getElementById("chosen-value")
-    field.value = field.innerHTML
 
-    if(field.innerHTML === "" || isActive == true)
-    {
+    if (field.innerHTML === "" || isActive == true) {
         alert("He");
     }
-    else{
+    else {
+        const buttonBox = document.getElementById("next-button");
+        let next = document.createElement("button");
+        next.className = "kovetkezo-gomb btn btn-dark";
+        next.innerHTML = "Következő";
+        next.type = "button";
 
-        const div = document.getElementById("div")
-
-
-        let next = document.createElement("button")
-        next.className="next btn btn-dark"
-        next.innerHTML="Tovább"
-        next.type="button"
-
-        div.appendChild(next)
+        buttonBox.appendChild(next);
 
         const ctx = document.getElementById('myChart');
 
@@ -66,10 +60,10 @@ function generateGraph(img_data) {
             data: {
                 labels: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9',],
                 datasets: [{
-                    label: 'Szavazatok eloszlása',
-                    data: [img_data.Vote_0, img_data.Vote_1, img_data.Vote_2,
-                           img_data.Vote_3, img_data.Vote_4, img_data.Vote_5,
-                           img_data.Vote_6, img_data.Vote_7, img_data.Vote_8, img_data.Vote_9,],
+                    label: 'Szavazatok száma a válaszokra lebontva',
+                    data: [img_data.Vote_1, img_data.Vote_2,
+                    img_data.Vote_3, img_data.Vote_4, img_data.Vote_5,
+                    img_data.Vote_6, img_data.Vote_7, img_data.Vote_8, img_data.Vote_9,],
                     backgroundColor: [
                         'rgba(255, 99, 132, 1)',
                         'rgba(54, 162, 235, 1)',
@@ -80,9 +74,9 @@ function generateGraph(img_data) {
                     ]
                 }]
             },
-            options:{
+            options: {
                 indexAxis: 'y',
-                padding:30,
+                padding: 30,
                 plugins: {
                     legend: {
                         labels: {
@@ -92,18 +86,16 @@ function generateGraph(img_data) {
                             }
                         }
                     }
-                   
                 }
             }
         });
 
         isActive = true;
-
     }
 }
-function getStandardDeviation (array) {
+
+function getStandardDeviation(array) {
     const n = array.length
     const mean = array.reduce((a, b) => a + b) / n
     return Math.sqrt(array.map(x => Math.pow(x - mean, 2)).reduce((a, b) => a + b) / n)
-  } 
-  
+}

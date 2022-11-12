@@ -1,86 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
-    <link rel="stylesheet" href="assets/test-style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/test.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+        rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+        crossorigin="anonymous">
     <title>MNIST PROJECT</title>
 </head>
-<body id="body">
-    <div id="container">
-        <div id="left-side" class="container">
-            <div class="left-element picture">
-                <img id="mnist-img" src="" alt="corn" width="400px" height="400px">
+
+<body id="bg">
+    <div id="main-container">
+        <div id="left-side">
+            <div id="picture">
+                <img id="mnist-img" src="" alt="number-img">
             </div>
-            <div class="left-element" id="answer-box">
+            <div id="answer-box">
                 <div>Válasz: </div>
                 <div id="chosen-value"></div>
             </div>
-            <div class="left-element input-buttons">
-                <div class="container text-center">
-                    <div class="row">
-                    <div class="col">
-                        <button type="button" class="numbers btn btn-dark" 
-                        onclick="if (document.getElementById('chosen-value').innerHTML === ''){
-                            document.getElementById('chosen-value').innerHTML = 1;
-                        }">1</button>
-                    </div>
-                    <div class="col">
-                        <button type="button" class="numbers btn btn-dark" onclick="inputValue(2)">2</button>
-                    </div>
-                    <div class="col">
-                        <button type="button" class="numbers btn btn-dark" onclick="inputValue(3)">3</button>
-                    </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                        <button type="button" class="numbers btn btn-dark" onclick="inputValue(4)">4</button>
-                        </div>
-                        <div class="col">
-                        <button type="button" class="numbers btn btn-dark" onclick="inputValue(5)">5</button>
-                        </div>
-                        <div class="col">
-                        <button type="button" class="numbers btn btn-dark" onclick="inputValue(6)">6</button>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                        <button type="button" class="numbers btn btn-dark" onclick="inputValue(7)">7</button>
-                        </div>
-                        <div class="col">
-                        <button type="button" class="numbers btn btn-dark" onclick="inputValue(8)">8</button>
-                        </div>
-                        <div class="col">
-                        <button type="button" class="numbers btn btn-dark" onclick="inputValue(9)">9</button>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                        <button type="button" class="numbers btn btn-dark" onclick="deleteValue()">Törlés</button>
-                        </div>
-                        <div class="col">
-                        <button type="button" class="numbers btn btn-dark" onclick="inputValue(0)">0</button>
-                        </div>
-                        <div class="col">
-                        <button type="button" class="numbers btn btn-dark" onclick="submitVote(false)">Kész</button>
-                        </div>
-                    </div>
-                </div>
+            <div id="input-button-grid">
+                <button type="button" class="numbers btn btn-dark" onclick="inputValue(1)">1</button>
+                <button type="button" class="numbers btn btn-dark" onclick="inputValue(2)">2</button>
+                <button type="button" class="numbers btn btn-dark" onclick="inputValue(3)">3</button>
+                <button type="button" class="numbers btn btn-dark" onclick="inputValue(4)">4</button>
+                <button type="button" class="numbers btn btn-dark" onclick="inputValue(5)">5</button>
+                <button type="button" class="numbers btn btn-dark" onclick="inputValue(6)">6</button>
+                <button type="button" class="numbers btn btn-dark" onclick="inputValue(7)">7</button>
+                <button type="button" class="numbers btn btn-dark" onclick="inputValue(8)">8</button>
+                <button type="button" class="numbers btn btn-dark" onclick="inputValue(9)">9</button>
+                <button type="button" class="numbers btn btn-dark" onclick="deleteValue()">Törlés</button>
+                <button type="button" class="numbers btn btn-dark" onclick="inputValue(0)">0</button>
+                <button type="button" class="numbers btn btn-dark" onclick="submitVote(false)">Kész</button>
             </div>
         </div>
-        <div id="right-side" >
-            <div class="graphs">
-                <canvas id="myChart" height="600" width="600"></canvas>
+        <div id="right-side">
+            <div id="graph">
+                <canvas id="myChart" width="500" height="500"></canvas>
             </div>
-            <div id="div"></div>
-        </div> 
+            <div id="next-button"></div>
+        </div>
     </div>
     <script src="./assets/script/main.js" type="module"></script>
     <script src="./assets/script/number-input.js"></script>
-    
-
 </body>
+
 </html>
