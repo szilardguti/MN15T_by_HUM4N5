@@ -1,6 +1,9 @@
 import { randomPic } from "./randomPic.js"
 import { submitVote } from "./test-input-buttons.js"
+import {nexTest} from "./nextbutton"
 
+let asd = sessionStorage.getItem("UserID")
+console.log(asd)
 // Initialize random picture when page is loaded
 randomPic(100,1,[],(res)=>{
     res = res.slice(1,-1);
@@ -11,5 +14,14 @@ randomPic(100,1,[],(res)=>{
         })
 });
 
+
 // Bind imports
 window.submitVote = submitVote;
+
+export function bindNextButton(){
+
+    nextbutton = document.getElementsByClassName("kovetkezo-gomb");
+    nextbutton.onclick= nexTest;
+
+
+}

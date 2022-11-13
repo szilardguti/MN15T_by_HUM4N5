@@ -1,5 +1,5 @@
 import { id } from "./randomPic.js"
-
+/* import {nexTest} from "./nextbutton.js" */
 var isActive = false;
 
 
@@ -52,8 +52,10 @@ function generateGraph(img_data) {
         next.className = "kovetkezo-gomb btn btn-dark";
         next.innerHTML = "Következő";
         next.type = "button";
+        bindNextButton();
 
         buttonBox.appendChild(next);
+        
 
         const ctx = document.getElementById('myChart');
 
