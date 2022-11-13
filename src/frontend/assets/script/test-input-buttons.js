@@ -1,5 +1,5 @@
 import { id } from "./randomPic.js"
-/* import {nexTest} from "./nextbutton.js" */
+import { nexTest } from "./nextbutton.js"
 var isActive = false;
 
 
@@ -24,19 +24,20 @@ export function submitVote() {
         })
         .then(res => res.json())
         .then(data => {
-                getimgdata()
-                 console.log(data)})
+            getimgdata()
+            console.log(data)
+        })
         .catch(error => console.log(error))
 
 }
 
-function getimgdata()
-{
-    fetch('http://localhost:3030/images/'+id)
-    .then(response => response.json())
-    .then(res_json => {
-        let res_data = res_json['0'];
-        generateGraph(res_data);})
+function getimgdata() {
+    fetch('http://localhost:3030/images/' + id)
+        .then(response => response.json())
+        .then(res_json => {
+            let res_data = res_json['0'];
+            generateGraph(res_data);
+        })
 }
 
 function generateGraph(img_data) {
@@ -52,10 +53,10 @@ function generateGraph(img_data) {
         next.className = "kovetkezo-gomb btn btn-dark";
         next.innerHTML = "Következő";
         next.type = "button";
-        bindNextButton();
+        next.onclick = "nexTest()";
 
         buttonBox.appendChild(next);
-        
+
 
         const ctx = document.getElementById('myChart');
 
@@ -65,7 +66,7 @@ function generateGraph(img_data) {
                 labels: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9',],
                 datasets: [{
                     label: 'Szavazatok száma a válaszokra lebontva',
-                    data: [img_data.Vote_0,img_data.Vote_1, img_data.Vote_2,
+                    data: [img_data.Vote_0, img_data.Vote_1, img_data.Vote_2,
                     img_data.Vote_3, img_data.Vote_4, img_data.Vote_5,
                     img_data.Vote_6, img_data.Vote_7, img_data.Vote_8, img_data.Vote_9,],
                     backgroundColor: [
@@ -93,7 +94,6 @@ function generateGraph(img_data) {
                 }
             }
         });
-
         isActive = true;
     }
 }
