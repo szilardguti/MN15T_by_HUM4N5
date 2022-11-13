@@ -1,8 +1,5 @@
 import { id } from "./randomPic.js"
 import { nexTest } from "./nextbutton.js"
-var isActive = false;
-
-
 
 export function submitVote() {
 
@@ -44,16 +41,22 @@ function generateGraph(img_data) {
     const field = document.getElementById("chosen-value")
     field.value = field.innerHTML
 
-    if (field.innerHTML === "" || isActive == true) {
+    if (field.innerHTML === "") {
         alert("He");
     }
     else {
+        const submitButton = document.getElementById("submit-button");
+        submitButton.disabled = true;
+        const deleteButton = document.getElementById("delete-button");
+        deleteButton.disabled = true;
+
         const buttonBox = document.getElementById("next-button");
         let next = document.createElement("button");
-        next.className = "kovetkezo-gomb btn btn-dark";
+        next.className = "btn btn-dark";
+        next.id = "kovetkezo-gomb"
         next.innerHTML = "Következő";
         next.type = "button";
-        next.onclick = "nexTest()";
+        next.onclick = nexTest;
 
         buttonBox.appendChild(next);
 
@@ -94,7 +97,6 @@ function generateGraph(img_data) {
                 }
             }
         });
-        isActive = true;
     }
 }
 

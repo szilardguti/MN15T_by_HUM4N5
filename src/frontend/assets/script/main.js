@@ -17,4 +17,4 @@ randomPic(100, 1, [], (res) => {
 
 // Bind imports
 window.submitVote = submitVote;
-window.nextbutton = nexTest;
+//window.nextbutton = nexTest;
