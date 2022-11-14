@@ -13,7 +13,7 @@ export function randomPic(solved, testerId, list_of_done, callback) {
                     returnAnyRandomPic(list_of_done,callback)
                 }
                 else{
-                    callback(res_data)
+                    callback(res_data['ImagePath'])
                 }
         });
     }

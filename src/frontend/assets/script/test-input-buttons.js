@@ -34,7 +34,31 @@ function getimgdata() {
         .then(res_json => {
             let res_data = res_json['0'];
             generateGraph(res_data);
+            calAndPutDeviationOnImg(res_data)
         })
+}
+
+function calAndPutDeviationOnImg(res_data)
+{
+    let result_array = [];
+    for (let index = 0; index <= 9; index++) {
+        let VoteCount = res_data[`Vote_${index}`];
+        for (let elemCount = 0; elemCount < VoteCount; elemCount++) {
+            result_array.push(index);
+        }
+    }
+
+
+    let result_deviation = getStandardDeviation(result_array);
+    fetch('http://localhost:3030/images/' + id + '/dev', {
+        method: "PUT",
+        headers: {
+            'Content-type': 'application/json'
+        },
+        body: JSON.stringify(
+            { "Deviation" : result_deviation}
+        )})
+    .catch(error => console.log(error))
 }
 
 function generateGraph(img_data) {
