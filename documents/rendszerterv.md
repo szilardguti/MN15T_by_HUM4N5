@@ -171,7 +171,7 @@ CREATE TABLE MNIST_Image(
     Vote_7 INT NOT NULL,
     Vote_8 INT NOT NULL,
     Vote_9 INT NOT NULL,
-    Deviation INT NOT NULL,
+    Deviation DECIMAL(16,13) NOT NULL,
     ImagePath VARCHAR(256) NOT NULL,
     PRIMARY KEY(`ID`)
 );
