@@ -25,6 +25,7 @@ setPWforDBconfig( pw, startWebService );
 // Controller section START
 const image_repository = require('./api/image_repository')
 const tester_repository = require('./api/tester_repository')
+const stat_repository = require('./api/stat_repository')
 
 // ===== Images =====
 
@@ -108,6 +109,64 @@ app.get('/MNIST_images/MNIST-JPG-testing/:val/:imgId.jpg', (req, res) => {
 
     var imageAsBase64 = fs.readFileSync('../../MNIST_images/MNIST-JPG-testing/' + value + '/' + imgId + '.jpg', 'base64');
     res.end(imageAsBase64);
+})
+
+// ===== Statistics =====
+
+// Női/Férfi eloszlás kitöltés
+app.get('/stat/gender/tests', (req, res) => {
+
+    stat_repository.getCountOfTestsDoneByGenders((result) => {
+        res.json(result);
+    })
+})
+
+// Női/Férfi kitöltők
+app.get('/stat/gender/testers', (req, res) => {
+
+    stat_repository.getCountOfGenders((result) => {
+        res.json(result);
+    })
+})
+
+// Végzettség szerint kitöltés
+app.get('/stat/studies/tests', (req, res) => {
+
+    stat_repository.getCountOfTestsDoneByStudies((result) => {
+        res.json(result);
+    })
+})
+
+// Végzettség szerint kitöltő
+app.get('/stat/studies/testers', (req, res) => {
+
+    stat_repository.getCountOfStudies((result) => {
+        res.json(result);
+    })
+})
+
+// Korosztályok szerinti kitöltő
+app.get('/stat/ages', (req, res) => {
+
+    stat_repository.getCountOfAges((result) => {
+        res.json(result);
+    })
+})
+
+// TOP 5 szórás
+app.get('/stat/topDev', (req, res) => {
+
+    stat_repository.getTopDeviationOnImages((result) => {
+        res.json(result);
+    })
+})
+
+// TOP 10 streak
+app.get('/stat/topStreak', (req, res) => {
+
+    stat_repository.getTopStreakOfTesters((result) => {
+        res.json(result);
+    })
 })
 
 // Controller section END
