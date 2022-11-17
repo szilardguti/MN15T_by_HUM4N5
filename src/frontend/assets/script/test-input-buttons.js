@@ -6,7 +6,15 @@ export function submitVote() {
     const field = document.getElementById("chosen-value")
     field.value = field.innerHTML
 
-
+    let testerId = sessionStorage.getItem("UserID")
+    
+    fetch('http://localhost:3030/tester/'+testerId+'/done/'+id, {
+        method: "POST",
+        headers: {
+            'Content-type': 'application/json'
+        },
+        body: JSON.stringify(
+            {"TestDate": new Date().toISOString().slice(0, 19).replace('T', ' ')})})
 
     fetch('http://localhost:3030/images/' + id + "/vote/" + field.value, {
         method: "PUT",
