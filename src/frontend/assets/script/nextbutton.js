@@ -1,7 +1,8 @@
 import { randomPic } from "./randomPic.js";
+import { listofdone, testerId } from "./main.js";
 
 export function nexTest() {
-    randomPic(0, 1, [], (res) => {
+    randomPic(listofdone.length, testerId, listofdone, (res) => {
         res = res.slice(1, -1);
         fetch('http://localhost:3030/' + res)
             .then(fetch_result => fetch_result.text())

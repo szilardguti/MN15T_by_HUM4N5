@@ -1,5 +1,6 @@
 import { id } from "./randomPic.js"
 import { nexTest } from "./nextbutton.js"
+import { listofdone } from "./main.js"
 
 export function submitVote() {
 
@@ -29,6 +30,7 @@ export function submitVote() {
         })
         .then(res => res.json())
         .then(data => {
+            listofdone.push(id)
             getimgdata()
             console.log(data)
         })
