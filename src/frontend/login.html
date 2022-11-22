@@ -1,41 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Üdvözöljük</title>
-    <link rel="stylesheet" href="assets/login-style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/login.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+        rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+        crossorigin="anonymous">
 
 </head>
+
 <body id="main">
-    <header id="page-title">MN15T_by_HUM4N5</header>
     <div id="login-panel">
         <p><b>Kérjük adjon meg néhány adatot a teszt kitöltéséhez</b></p>
-        <p>Nem:</p>
-        <form id="choose-gender">
-            <input type="radio" id="female" name="choose-gender" value="f">
-            <label for="female">Nő</label><br>
-            <input type="radio" id="male" name="choose-gender" value="m">
-            <label for="male">Férfi</label><br>
-        </form>
+        <div id="gender-box">Nem:
+            <form id="choose-gender">
+                <input type="radio" id="female" name="choose-gender" value="f">
+                <label for="female">Nő</label><br>
+                <input type="radio" id="male" name="choose-gender" value="m">
+                <label for="male">Férfi</label><br>
+            </form>
+        </div>
 
-        <p>Életkor:</p>
-        <form >
-            <input id="age" type="number" min="1" max="99" required>
-        </form>
-        <p>Legmagasabb iskolai végzettség:</p>
-        <select class="form-select" id="suli" aria-label="Default select example" >
-            <option selected>Kérem válasszon</option>
-            <option value="Általános iskola">Általános iskola</option>
-            <option value="Gimnázium/Szakközépiskola">Gimnázium/Szakközépiskola</option>
-            <option value="Egyetem/Főiskola">Egyetem/Főiskola</option>
-        </select>
-            <button type="button" class="btn btn-success loginbutton" onclick='register()'>Tovább</button>
-    </div>
-    <div id="graphs">
+        <div id="age-box">Életkor:
+            <form>
+                <input id="age" type="number" min="1" max="99" required>
+            </form>
+        </div>
+        <div id="studies-box">Legmagasabb iskolai végzettség:
+            <select class="form-select" id="suli" aria-label="Default select example">
+                <option selected>Kérem válasszon</option>
+                <option value="Általános iskola">Általános iskola</option>
+                <option value="Gimnázium/Szakközépiskola">Gimnázium/Szakközépiskola</option>
+                <option value="Egyetem/Főiskola">Egyetem/Főiskola</option>
+            </select>
+        </div>
+        <div id="error-text"></div>
+        <button type="button" id="login-button" class="btn btn-success" onclick='register()'>Tovább</button>
     </div>
     <script src="./assets/script/login.js"></script>
 </body>
+
 </html>
