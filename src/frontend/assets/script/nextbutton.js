@@ -14,6 +14,7 @@ export function nexTest() {
     const graphDiv = document.getElementById("graph");
     graphDiv.removeChild(document.getElementById("myChart"));
     document.getElementById("next-button").removeChild(document.getElementById("kovetkezo-gomb"));
+    document.getElementById("next-button").removeChild(document.getElementById("befejezes-gomb"));
     const newCanvas = document.createElement("canvas");
     newCanvas.id = "myChart";
     newCanvas.width = "400";

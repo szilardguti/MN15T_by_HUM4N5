@@ -8,14 +8,15 @@ export function submitVote() {
     field.value = field.innerHTML
 
     let testerId = sessionStorage.getItem("UserID")
-    
-    fetch('http://localhost:3030/tester/'+testerId+'/done/'+id, {
+
+    fetch('http://localhost:3030/tester/' + testerId + '/done/' + id, {
         method: "POST",
         headers: {
             'Content-type': 'application/json'
         },
         body: JSON.stringify(
-            {"TestDate": new Date().toISOString().slice(0, 19).replace('T', ' ')})})
+            { "TestDate": new Date().toISOString().slice(0, 19).replace('T', ' ') })
+    })
 
     fetch('http://localhost:3030/images/' + id + "/vote/" + field.value, {
         method: "PUT",
@@ -48,8 +49,7 @@ function getimgdata() {
         })
 }
 
-function calAndPutDeviationOnImg(res_data)
-{
+function calAndPutDeviationOnImg(res_data) {
     let result_array = [];
     for (let index = 0; index <= 9; index++) {
         let VoteCount = res_data[`Vote_${index}`];
@@ -66,9 +66,10 @@ function calAndPutDeviationOnImg(res_data)
             'Content-type': 'application/json'
         },
         body: JSON.stringify(
-            { "Deviation" : result_deviation}
-        )})
-    .catch(error => console.log(error))
+            { "Deviation": result_deviation }
+        )
+    })
+        .catch(error => console.log(error))
 }
 
 function generateGraph(img_data) {
@@ -76,7 +77,7 @@ function generateGraph(img_data) {
     field.value = field.innerHTML
 
     if (field.innerHTML === "") {
-        alert("He");
+        alert("Válasszon egy értéket!");
     }
     else {
         const submitButton = document.getElementById("submit-button");
@@ -92,7 +93,18 @@ function generateGraph(img_data) {
         next.type = "button";
         next.onclick = nexTest;
 
+        let goStats = document.createElement("button");
+        goStats.className = "btn btn-dark";
+        goStats.id = "befejezes-gomb";
+        goStats.innerHTML = "Befejezés";
+        goStats.type = "button";
+
+        /******************
+        goStats.onclick = TODO, Statisztika oldalra dob!
+        *******************/
+
         buttonBox.appendChild(next);
+        buttonBox.appendChild(goStats);
 
 
         const ctx = document.getElementById('myChart');

@@ -6,7 +6,7 @@
 #main-container {
     display: flex;
     justify-content: center;
-    margin: 4rem;
+    margin: 2rem;
     padding: 1rem;
     background-color: rgba(209, 190, 168, 0.9);
 }
@@ -67,7 +67,12 @@
     padding-top: 2rem;
 }
 
-@media screen and (max-width: 992px) {
+#next-button>button {
+    margin: 1rem 1rem;
+    width: 8rem;
+}
+
+@media screen and (max-width: 1000px) {
     * {
         font-size: 10px;
     }

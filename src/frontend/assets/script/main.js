@@ -1,5 +1,5 @@
 import { randomPic } from "./randomPic.js"
-import { submitVote } from "./test-input-buttons.js"
+import { submitVote } from "./submit-vote.js"
 import { nexTest } from "./nextbutton.js"
 
 export let testerId = sessionStorage.getItem("UserID")
@@ -20,4 +20,3 @@ randomPic(100, testerId, listofdone, (res) => {
 
 // Bind imports
 window.submitVote = submitVote;
-//window.nextbutton = nexTest;
