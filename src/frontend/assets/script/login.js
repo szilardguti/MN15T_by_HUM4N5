@@ -1,4 +1,4 @@
-fetch('http://localhost:3030/wakeup', {
+fetch('https://mn15t-by-hum4n5.onrender.com/wakeup', {
   method: 'GET'
 })
 
@@ -49,5 +49,5 @@ function getData(form) {
 
 function setUser(userID) {
   sessionStorage.setItem("UserID", userID)
-  window.location.href = "/src/frontend/test.html";
+  window.location.href = "./test.html";
 }
