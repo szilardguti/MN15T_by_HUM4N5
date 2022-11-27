@@ -14,7 +14,7 @@ function register() {
     errorMsg.style.fontSize = "14px";
   }
   else {
-    fetch('http://localhost:3030/tester', {
+    fetch('https://mn15t-by-hum4n5.onrender.com/tester', {
       method: 'POST',
       headers: {
         'Content-type': 'application/json'

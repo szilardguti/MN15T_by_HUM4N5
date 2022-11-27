@@ -1,6 +1,5 @@
-function getstatfndone()
-{
-    fetch('http://localhost:3030/stat/gender/tests')
+function getstatfndone() {
+    fetch('https://mn15t-by-hum4n5.onrender.com/stat/gender/tests')
         .then(response => response.json())
         .then(res_json => {
             generatestatfndone(res_json);
@@ -8,36 +7,32 @@ function getstatfndone()
 }
 getstatfndone()
 
-function getstatfnreg()
-{
-    fetch('http://localhost:3030/stat/gender/testers')
+function getstatfnreg() {
+    fetch('https://mn15t-by-hum4n5.onrender.com/stat/gender/testers')
         .then(response => response.json())
         .then(res_json => {
             let res_data = res_json['0'];
             generatestatfnreg(res_data);
         })
 }
-function getstatbystudiesdone()
-{
-    fetch('http://localhost:3030/stat/studies/tests')
+function getstatbystudiesdone() {
+    fetch('https://mn15t-by-hum4n5.onrender.com/stat/studies/tests')
         .then(response => response.json())
         .then(res_json => {
             let res_data = res_json['0'];
             generatestatbystudiesdone(res_data);
         })
 }
-function getstatbystudiesreg()
-{
-    fetch('http://localhost:3030/stat/studies/testers')
+function getstatbystudiesreg() {
+    fetch('https://mn15t-by-hum4n5.onrender.com/stat/studies/testers')
         .then(response => response.json())
         .then(res_json => {
             let res_data = res_json['0'];
             generatestatbystudiesreg(res_data);
         })
 }
-function getstatbyages()
-{
-    fetch('http://localhost:3030/stat/ages')
+function getstatbyages() {
+    fetch('https://mn15t-by-hum4n5.onrender.com/stat/ages')
         .then(response => response.json())
         .then(res_json => {
             console.log(res_json)
@@ -46,18 +41,16 @@ function getstatbyages()
 }
 getstatbyages()
 
-function getstattop5()
-{
-    fetch('http://localhost:3030/stat/topDev')
+function getstattop5() {
+    fetch('https://mn15t-by-hum4n5.onrender.com/stat/topDev')
         .then(response => response.json())
         .then(res_json => {
             let res_data = res_json['0'];
             generatestattop5(res_data);
         })
 }
-function getstattop10()
-{
-    fetch('http://localhost:3030/stat/topStreak')
+function getstattop10() {
+    fetch('https://mn15t-by-hum4n5.onrender.com/stat/topStreak')
         .then(response => response.json())
         .then(res_json => {
             let res_data = res_json['0'];
@@ -65,8 +58,7 @@ function getstattop10()
         })
 }
 
-function generatestatfndone(givenData)
-{
+function generatestatfndone(givenData) {
     const ctx = document.getElementById('gender-dev');
 
     let genderLabel = ['Male', 'Female'];
@@ -75,25 +67,24 @@ function generatestatfndone(givenData)
     new Chart(ctx, {
         type: "pie",
         data: {
-          labels: genderLabel,
-          datasets: [{
-            backgroundColor: ['blue', 'red'],
-            data: chartValues
-          }]
+            labels: genderLabel,
+            datasets: [{
+                backgroundColor: ['blue', 'red'],
+                data: chartValues
+            }]
         },
         options: {
-          title: {
-            display: true,
-            text: "TODO"
-          },
-           responsive:true,
-           maintainAspectRatio: false
+            title: {
+                display: true,
+                text: "TODO"
+            },
+            responsive: true,
+            maintainAspectRatio: false
         }
-      });
+    });
 }
 
-function generatestatbyages(givenData)
-{
+function generatestatbyages(givenData) {
     const ctx = document.getElementById('by-age');
 
     let ageLabel = [];
@@ -109,19 +100,19 @@ function generatestatbyages(givenData)
     new Chart(ctx, {
         type: "bar",
         data: {
-          labels: ageLabel,
-          datasets: [{
-            label: 'Number of testers in Age Ranges',
-            data: chartValues
-          }]
+            labels: ageLabel,
+            datasets: [{
+                label: 'Number of testers in Age Ranges',
+                data: chartValues
+            }]
         },
         options: {
-          title: {
-            display: false,
-            text: "TODO"
-          },
-           responsive:true,
-           maintainAspectRatio: false
+            title: {
+                display: false,
+                text: "TODO"
+            },
+            responsive: true,
+            maintainAspectRatio: false
         }
-      });
+    });
 }

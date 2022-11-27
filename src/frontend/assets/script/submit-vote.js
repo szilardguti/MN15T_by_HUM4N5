@@ -9,7 +9,7 @@ export function submitVote() {
 
     let testerId = sessionStorage.getItem("UserID")
 
-    fetch('http://localhost:3030/tester/' + testerId + '/done/' + id, {
+    fetch('https://mn15t-by-hum4n5.onrender.com/tester/' + testerId + '/done/' + id, {
         method: "POST",
         headers: {
             'Content-type': 'application/json'
@@ -18,7 +18,7 @@ export function submitVote() {
             { "TestDate": new Date().toISOString().slice(0, 19).replace('T', ' ') })
     })
 
-    fetch('http://localhost:3030/images/' + id + "/vote/" + field.value, {
+    fetch('https://mn15t-by-hum4n5.onrender.com/images/' + id + "/vote/" + field.value, {
         method: "PUT",
         headers: {
             'Content-type': 'application/json'
@@ -40,7 +40,7 @@ export function submitVote() {
 }
 
 function getimgdata() {
-    fetch('http://localhost:3030/images/' + id)
+    fetch('https://mn15t-by-hum4n5.onrender.com/images/' + id)
         .then(response => response.json())
         .then(res_json => {
             let res_data = res_json['0'];
@@ -60,7 +60,7 @@ function calAndPutDeviationOnImg(res_data) {
 
 
     let result_deviation = getStandardDeviation(result_array);
-    fetch('http://localhost:3030/images/' + id + '/dev', {
+    fetch('https://mn15t-by-hum4n5.onrender.com/images/' + id + '/dev', {
         method: "PUT",
         headers: {
             'Content-type': 'application/json'

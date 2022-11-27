@@ -1,6 +1,6 @@
 function inputValue(value) {
     const field = document.getElementById("chosen-value")
-    if (field.innerHTML === ""){
+    if (field.innerHTML === "") {
         field.innerHTML = value;
     }
 }
