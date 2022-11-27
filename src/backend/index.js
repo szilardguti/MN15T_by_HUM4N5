@@ -27,6 +27,12 @@ const image_repository = require('./api/image_repository')
 const tester_repository = require('./api/tester_repository')
 const stat_repository = require('./api/stat_repository')
 
+// ===== Wake up =====
+app.get('/wakeup', (req, res) => {
+    console.log('wakey wakey')
+    res.sendStatus(200);
+})
+
 // ===== Images =====
 
 app.get('/images/:imgId', (req, res) => {

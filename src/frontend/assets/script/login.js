@@ -1,3 +1,7 @@
+fetch('http://localhost:3030/wakeup', {
+  method: 'GET'
+})
+
 function register() {
   let age = document.getElementById("age");
   let bender = document.getElementById("choose-gender");
