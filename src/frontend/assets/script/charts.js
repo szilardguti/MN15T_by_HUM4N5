@@ -3,10 +3,11 @@ function getstatfndone()
     fetch('http://localhost:3030/stat/gender/tests')
         .then(response => response.json())
         .then(res_json => {
-            let res_data = res_json['0'];
-            generatestatfndone(res_data);
+            generatestatfndone(res_json);
         })
 }
+getstatfndone()
+
 function getstatfnreg()
 {
     fetch('http://localhost:3030/stat/gender/testers')
@@ -39,10 +40,12 @@ function getstatbyages()
     fetch('http://localhost:3030/stat/ages')
         .then(response => response.json())
         .then(res_json => {
-            let res_data = res_json['0'];
-            generatestatbyages(res_data);
+            console.log(res_json)
+            generatestatbyages(res_json);
         })
 }
+getstatbyages()
+
 function getstattop5()
 {
     fetch('http://localhost:3030/stat/topDev')
@@ -62,22 +65,63 @@ function getstattop10()
         })
 }
 
-function generatestatfndone()
+function generatestatfndone(givenData)
 {
-    new Chart("myChart", {
+    const ctx = document.getElementById('gender-dev');
+
+    let genderLabel = ['Male', 'Female'];
+    let chartValues = [givenData['0']['TestCount'], givenData['1']['TestCount']];
+
+    new Chart(ctx, {
         type: "pie",
         data: {
-          labels: xValues,
+          labels: genderLabel,
           datasets: [{
-            backgroundColor: barColors,
-            data: yValues
+            backgroundColor: ['blue', 'red'],
+            data: chartValues
           }]
         },
         options: {
           title: {
             display: true,
-            text: "World Wide Wine Production"
-          }
+            text: "TODO"
+          },
+           responsive:true,
+           maintainAspectRatio: false
+        }
+      });
+}
+
+function generatestatbyages(givenData)
+{
+    const ctx = document.getElementById('by-age');
+
+    let ageLabel = [];
+    let chartValues = [];
+
+    givenData.forEach(element => {
+        ageLabel.push(element['Range'])
+        chartValues.push(element['AgeCount'])
+    });
+
+    ageLabel.pop(); chartValues.pop();
+
+    new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels: ageLabel,
+          datasets: [{
+            label: 'Number of testers in Age Ranges',
+            data: chartValues
+          }]
+        },
+        options: {
+          title: {
+            display: false,
+            text: "TODO"
+          },
+           responsive:true,
+           maintainAspectRatio: false
         }
       });
 }

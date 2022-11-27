@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./assets/statistics.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
     <title>Kitöltői statisztikák</title>
 </head>
 
@@ -16,7 +17,9 @@
         <div class="swiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <canvas id="gender-dev" width="600" height="400"></canvas>
+                    <div style="max-width: 600px;">
+                        <canvas id="gender-dev" width="600" height="400"></canvas>  
+                    </div>
                 </div>
                 <div class="swiper-slide">
                     <canvas id="gender-sum" width="600" height="400"></canvas>
@@ -28,7 +31,9 @@
                     <canvas id="studies2" width="600" height="400"></canvas>
                 </div>
                 <div class="swiper-slide">
-                    <canvas id="by-age" width="600" height="400"></canvas>
+                    <div style="max-width: 600px;">
+                        <canvas id="by-age" width="600" height="400"></canvas>
+                    </div>
                 </div>
                 <div class="swiper-slide">
                     <canvas id="top-five-dev" width="600" height="400"></canvas>
@@ -43,6 +48,7 @@
         </div>
     </div>
     <script src="./assets/script/swiper.js"></script>
+    <script src="./assets/script/charts.js"></script>
 </body>
 
 </html>
