@@ -5,7 +5,7 @@ function getstatfndone() {
             generatestatfndone(res_json);
         })
 }
-getstatfndone()
+getstatfndone();
 
 function getstatfnreg() {
     fetch('https://mn15t-by-hum4n5.onrender.com/stat/gender/testers')
@@ -14,6 +14,8 @@ function getstatfnreg() {
             generatestatfnreg(res_json);
         })
 }
+getstatfnreg();
+
 function getstatbystudiesdone() {
     fetch('https://mn15t-by-hum4n5.onrender.com/stat/studies/tests')
         .then(response => response.json())
@@ -21,6 +23,8 @@ function getstatbystudiesdone() {
             generatestatbystudiesdone(res_json);
         })
 }
+getstatbystudiesdone();
+
 function getstatbystudiesreg() {
     fetch('https://mn15t-by-hum4n5.onrender.com/stat/studies/testers')
         .then(response => response.json())
@@ -28,6 +32,8 @@ function getstatbystudiesreg() {
             generatestatbystudiesreg(res_json);
         })
 }
+getstatbystudiesreg();
+
 function getstatbyages() {
     fetch('https://mn15t-by-hum4n5.onrender.com/stat/ages')
         .then(response => response.json())
@@ -35,7 +41,7 @@ function getstatbyages() {
             generatestatbyages(res_json);
         })
 }
-getstatbyages()
+getstatbyages();
 
 function getstattop5() {
     fetch('https://mn15t-by-hum4n5.onrender.com/stat/topDev')
@@ -51,7 +57,7 @@ function getstattop10() {
             generatestattop10(res_json);
         })
 }
-getstattop10()
+getstattop10();
 
 
 function generatestatfndone(givenData) {

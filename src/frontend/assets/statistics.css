@@ -34,5 +34,16 @@ canvas {
 }
 
 .swiper .swiper-pagination-bullet-active {
-    background: black;
+    background: rgb(209, 190, 168);
+}
+
+.swiper .swiper-pagination-bullet {
+    background: white;
+}
+
+.swiper-horizontal>.swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+    position: revert;
 }
