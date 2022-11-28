@@ -2,7 +2,7 @@ export var id;
 
 export function randomPic(solved, testerId, list_of_done, callback) {
     let randomn = Math.floor(Math.random() * 101);
-    if (randomn < solved) {
+    if (5 * randomn < solved) {
         fetch('https://mn15t-by-hum4n5.onrender.com/tester/' + testerId + '/highdeviation')
             .then(response => response.json())
             .then(res_json => {
@@ -34,5 +34,5 @@ function returnAnyRandomPic(list_of_done, callback) {
             console.log(randomn)
         });
     console.log(id)
-    id = randomn;
+    id = randomn; //xdfunixdd
 }

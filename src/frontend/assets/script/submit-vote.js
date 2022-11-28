@@ -33,6 +33,7 @@ export function submitVote() {
         .then(data => {
             listofdone.push(id)
             getimgdata()
+            handleStreak(listofdone.length)
             console.log(data)
         })
         .catch(error => console.log(error))
@@ -98,10 +99,7 @@ function generateGraph(img_data) {
         goStats.id = "befejezes-gomb";
         goStats.innerHTML = "Befejezés";
         goStats.type = "button";
-
-        /******************
-        goStats.onclick = TODO, Statisztika oldalra dob!
-        *******************/
+        goStats.onclick = goStat;
 
         buttonBox.appendChild(next);
         buttonBox.appendChild(goStats);
@@ -150,4 +148,20 @@ function getStandardDeviation(array) {
     const n = array.length
     const mean = array.reduce((a, b) => a + b) / n
     return Math.sqrt(array.map(x => Math.pow(x - mean, 2)).reduce((a, b) => a + b) / n)
+}
+
+function goStat() {
+    window.location.href = "./statistics.html";
+    sessionStorage.removeItem("UserID")
+  }
+  
+
+function handleStreak(streakCount){
+    const streakCounter = document.getElementById("streak-counter");
+
+    streakCounter.innerHTML = `${streakCount} 🔥`;
+
+    if (streakCount % 5 == 0) {
+        party.confetti(streakCounter)
+    }
 }

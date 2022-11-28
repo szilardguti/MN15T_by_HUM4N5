@@ -12,12 +12,19 @@ function register() {
   console.log(school.value);
   console.log(gender);
 
-  if (gender == undefined || school.value == "Kérem válasszon" || age.value == "") {
+  if (gender == undefined || school.value == "Kérem válasszon" || age.value == "" ) {
     let errorMsg = document.getElementById("error-text");
     errorMsg.innerHTML = "A továbblépéshez töltsön ki minden mezőt";
     errorMsg.style.fontSize = "14px";
   }
   else {
+    if (age.value < 0 || age.value > 100) {
+      let errorMsg = document.getElementById("error-text");
+      errorMsg.innerHTML = "Az életkor 0 és 100 érték között lehet (te hazug)";
+      errorMsg.style.fontSize = "14px";
+      return;
+    }
+
     fetch('https://mn15t-by-hum4n5.onrender.com/tester', {
       method: 'POST',
       headers: {
