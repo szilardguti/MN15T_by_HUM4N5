@@ -37,7 +37,9 @@ app.get('/wakeup', (req, res) => {
 
 app.get('/images/:imgId', (req, res) => {
     let ID = req.params.imgId;
-    image_repository.getImgById(ID, (img_data) => {
+    let connection = db.getConnection();
+
+    image_repository.getImgById(ID, connection, (img_data) => {
         res.json(img_data);
     });
 })
@@ -64,24 +66,27 @@ app.put('/images/:imgId/dev', (req, res) => {
 
 app.get('/tester/:testerId/done', (req, res) => {
     let testerId = req.params.testerId;
-    tester_repository.getDoneTestsIdByTesterId(testerId, (idList) => {
+    let connection = db.getConnection();
+
+    tester_repository.getDoneTestsIdByTesterId(testerId, connection, (idList) => {
         res.json(idList);
     })
 })
 
 app.post('/tester', (req, res) => {
     const postData = req.body;
+    let connection = db.getConnection();
 
     if (postData.Gender != 'o' && 
         postData.Gender != 'f' &&
         postData.Gender != 'm' ||
         postData.Age < 0 ||
-        postData.Age > 150) {
+        postData.Age > 120) {
             res.json(null);
             return;
     }
 
-    tester_repository.postTester(postData, (result) => {
+    tester_repository.postTester(postData, connection, (result) => {
         res.json(result.insertId);
     })
 
@@ -91,16 +96,18 @@ app.post('/tester/:testerId/done/:imgId', (req, res) => {
     let testerId = req.params.testerId;
     let imgId    = req.params.imgId;
     let date     = req.body;
+    let connection = db.getConnection();
 
-    tester_repository.postTesterDoneTest(testerId, imgId, date, (result) => {
+    tester_repository.postTesterDoneTest(testerId, imgId, date, connection, (result) => {
         res.json(result);
     })
 })
 
 app.get('/tester/:testerId/highdeviation', (req, res) => {
     let testerID = req.params.testerId;
+    let connection = db.getConnection();
 
-    tester_repository.getHighestDeviationNotDoneByTester(testerID, (result) => {
+    tester_repository.getHighestDeviationNotDoneByTester(testerID, connection, (result) => {
         res.json(result);
     })
 })
@@ -121,56 +128,63 @@ app.get('/MNIST_images/MNIST-JPG-testing/:val/:imgId.jpg', (req, res) => {
 
 // Női/Férfi eloszlás kitöltés
 app.get('/stat/gender/tests', (req, res) => {
+    let connection = db.getConnection();
 
-    stat_repository.getCountOfTestsDoneByGenders((result) => {
+    stat_repository.getCountOfTestsDoneByGenders(connection, (result) => {
         res.json(result);
     })
 })
 
 // Női/Férfi kitöltők
 app.get('/stat/gender/testers', (req, res) => {
+    let connection = db.getConnection();
 
-    stat_repository.getCountOfGenders((result) => {
+    stat_repository.getCountOfGenders(connection, (result) => {
         res.json(result);
     })
 })
 
 // Végzettség szerint kitöltés
 app.get('/stat/studies/tests', (req, res) => {
+    let connection = db.getConnection();
 
-    stat_repository.getCountOfTestsDoneByStudies((result) => {
+    stat_repository.getCountOfTestsDoneByStudies(connection, (result) => {
         res.json(result);
     })
 })
 
 // Végzettség szerint kitöltő
 app.get('/stat/studies/testers', (req, res) => {
+    let connection = db.getConnection();
 
-    stat_repository.getCountOfStudies((result) => {
+    stat_repository.getCountOfStudies(connection, (result) => {
         res.json(result);
     })
 })
 
 // Korosztályok szerinti kitöltő
 app.get('/stat/ages', (req, res) => {
+    let connection = db.getConnection();
 
-    stat_repository.getCountOfAges((result) => {
+    stat_repository.getCountOfAges(connection, (result) => {
         res.json(result);
     })
 })
 
 // TOP 5 szórás
 app.get('/stat/topDev', (req, res) => {
+    let connection = db.getConnection();
 
-    stat_repository.getTopDeviationOnImages((result) => {
+    stat_repository.getTopDeviationOnImages(connection, (result) => {
         res.json(result);
     })
 })
 
 // TOP 10 streak
 app.get('/stat/topStreak', (req, res) => {
+    let connection = db.getConnection();
 
-    stat_repository.getTopStreakOfTesters((result) => {
+    stat_repository.getTopStreakOfTesters(connection, (result) => {
         res.json(result);
     })
 })

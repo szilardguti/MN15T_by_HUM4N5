@@ -1,7 +1,7 @@
 const { getConnection, closeConnection } = require('../database/db');
 
-const getCountOfTestsDoneByGenders = (callback) => {
-    let connection = getConnection();
+const getCountOfTestsDoneByGenders = (connection, callback) => {
+    
     connection.query('SELECT Tester.Gender, COUNT(*) AS TestCount FROM Tests JOIN Tester ON Tests.TesterID = Tester.ID GROUP BY Tester.Gender', (err, res) => 
     {
         if (err)
@@ -16,8 +16,8 @@ const getCountOfTestsDoneByGenders = (callback) => {
     })
 }
 
-const getCountOfGenders = (callback) => {
-    let connection = getConnection();
+const getCountOfGenders = (connection, callback) => {
+    
     connection.query('SELECT Tester.Gender, COUNT(*) AS TesterCount FROM Tester GROUP BY Tester.Gender', (err, res) => 
     {
         if (err)
@@ -32,8 +32,8 @@ const getCountOfGenders = (callback) => {
     })
 }
 
-const getCountOfTestsDoneByStudies = (callback) => {
-    let connection = getConnection();
+const getCountOfTestsDoneByStudies = (connection, callback) => {
+    
     connection.query('SELECT Tester.Studies, COUNT(*) AS TestCount FROM Tester JOIN Tests ON Tests.TesterID = Tester.ID GROUP BY Tester.Studies', (err, res) => 
     {
         if (err)
@@ -48,8 +48,8 @@ const getCountOfTestsDoneByStudies = (callback) => {
     })
 }
 
-const getCountOfStudies = (callback) => {
-    let connection = getConnection();
+const getCountOfStudies = (connection, callback) => {
+    
     connection.query('SELECT Tester.Studies, COUNT(*) AS TesterCount FROM Tester GROUP BY Tester.Studies', (err, res) => 
     {
         if (err)
@@ -64,8 +64,8 @@ const getCountOfStudies = (callback) => {
     })
 }
 
-const getCountOfAges = (callback) => {
-    let connection = getConnection();
+const getCountOfAges = (connection, callback) => {
+    
     connection.query(`SELECT
         t.range,
         COUNT(*) AS \`AgeCount\`
@@ -102,8 +102,8 @@ const getCountOfAges = (callback) => {
     })
 }
 
-const getTopDeviationOnImages = (callback) => {
-    let connection = getConnection();
+const getTopDeviationOnImages = (connection, callback) => {
+
     connection.query('SELECT * FROM MNIST_Image ORDER BY MNIST_Image.Deviation DESC LIMIT 5', (err, res) => 
     {
         if (err)
@@ -118,8 +118,8 @@ const getTopDeviationOnImages = (callback) => {
     })
 }
 
-const getTopStreakOfTesters = (callback) => {
-    let connection = getConnection();
+const getTopStreakOfTesters = (connection, callback) => {
+
     connection.query('SELECT Tests.TesterID, COUNT(*) AS testCount FROM Tests GROUP BY Tests.TesterID ORDER BY testCount DESC LIMIT 10', (err, res) => 
     {
         if (err)

@@ -1,7 +1,7 @@
 const { getConnection, closeConnection } = require('../database/db');
 
-const getDoneTestsIdByTesterId = (testerId, callback) => {
-    let connection = getConnection();
+const getDoneTestsIdByTesterId = (testerId, connection, callback) => {
+
     connection.query('SELECT Tests.ImageID FROM Tests WHERE Tests.TesterID = ?', testerId, (err, idList) => 
     {
         if (err)
@@ -16,8 +16,8 @@ const getDoneTestsIdByTesterId = (testerId, callback) => {
     })
 }
 
-const postTester = (testerData, callback) => {
-    let connection = getConnection();
+const postTester = (testerData, connection, callback) => {
+
     connection.query('INSERT INTO Tester SET ?', testerData, (err, results) => 
     {
         if (err)
@@ -32,8 +32,7 @@ const postTester = (testerData, callback) => {
     })
 }
 
-const postTesterDoneTest = (testerId, imgId, date, callback) => {
-    let connection = getConnection();
+const postTesterDoneTest = (testerId, imgId, date, connection, callback) => {
 
     let postData = {
         "TesterID" : testerId,
@@ -56,8 +55,8 @@ const postTesterDoneTest = (testerId, imgId, date, callback) => {
     })
 }
 
-const getHighestDeviationNotDoneByTester = (testerId, callback) => {
-    let connection = getConnection();
+const getHighestDeviationNotDoneByTester = (testerId, connection, callback) => {
+
     connection.query(`SELECT * FROM MNIST_Image AS mimg WHERE mimg.ID NOT IN ( SELECT Tests.ImageID FROM Tests WHERE Tests.TesterID = ?) ORDER BY mimg.Deviation DESC LIMIT 1;`, testerId, (err, result) => 
     {
         if (err)

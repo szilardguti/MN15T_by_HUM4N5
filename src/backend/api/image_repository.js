@@ -1,14 +1,14 @@
 const { getConnection, closeConnection } = require('../database/db');
 
-const getImgById = (imgId, callback) => {
-    let connection = getConnection();
+const getImgById = (imgId, connection, callback) => {
     connection.query('SELECT * FROM MNIST_Image WHERE ID = ?', imgId, (err, img_data) => 
     {
         if (err)
         {
             console.log(err);
             closeConnection(connection);
-            return callback(null);
+            callback(null);
+            return;
         }
 
         closeConnection(connection);
@@ -16,8 +16,7 @@ const getImgById = (imgId, callback) => {
     })
 }
 
-const putVoteOnImage = (imgId, voteNum, callback) => {
-    let connection = getConnection();
+const putVoteOnImage = (imgId, voteNum, connection, callback) => {
     connection.query(`UPDATE MNIST_Image SET Vote_${voteNum} = Vote_${voteNum} + 1  WHERE ID = ?`, imgId, (err, result) => 
     {
         if (err)
@@ -32,8 +31,7 @@ const putVoteOnImage = (imgId, voteNum, callback) => {
     })
 }
 
-const putDeviationOnImage = (imgId, deviation, callback) => {
-    let connection = getConnection();
+const putDeviationOnImage = (imgId, deviation, connection, callback) => {
     connection.query(`UPDATE MNIST_Image SET Deviation = ${deviation}  WHERE ID = ?`, imgId, (err, result) => 
     {
         if (err)
