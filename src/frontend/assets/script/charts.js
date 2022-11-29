@@ -63,7 +63,7 @@ getstattop10();
 function generatestatfndone(givenData) {
     const ctx = document.getElementById('gender-dev');
 
-    let genderLabel = ['Male', 'Female'];
+    let genderLabel = ['Férfi', 'Nő'];
     let chartValues = [givenData['0']['TestCount'], givenData['1']['TestCount']];
 
     new Chart(ctx, {
@@ -104,7 +104,8 @@ function generatestatbyages(givenData) {
         data: {
             labels: ageLabel,
             datasets: [{
-                label: 'Number of testers in Age Ranges',
+                label: 'Kitöltők száma kor szerint',
+                backgroundColor: ['green', 'purple','red', 'white','blue'],
                 data: chartValues
             }]
         },
@@ -121,7 +122,7 @@ function generatestatbyages(givenData) {
 function generatestatfnreg(givenData) {
     const ctx = document.getElementById('gender-sum');
 
-    let genderLabel = ['Female', 'Male'];
+    let genderLabel = ['Nő', 'Férfi'];
     let chartValues = [givenData['0']['TesterCount'], givenData['1']['TesterCount']];
 
     new Chart(ctx, {
@@ -161,7 +162,8 @@ function generatestatbystudiesdone(givenData) {
         data: {
             labels: studiesLabel,
             datasets: [{
-                label: 'Number of tests done by different study levels',
+                label: 'Kitöltések száma iskolai végzetségek szerint',
+                backgroundColor: ['green', 'purple','red', 'white','blue'],
                 data: chartValues
             }]
         },
@@ -193,7 +195,8 @@ function generatestatbystudiesreg(givenData) {
         data: {
             labels: studiesLabel,
             datasets: [{
-                label: 'Number of testers by different study levels',
+                label: 'Kitöltők száma iskolai végzetségek szerint',
+                backgroundColor: ['green', 'purple','red', 'white','blue'],
                 data: chartValues
             }]
         },
