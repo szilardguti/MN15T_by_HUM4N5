@@ -63,15 +63,15 @@ getstattop10();
 function generatestatfndone(givenData) {
     const ctx = document.getElementById('gender-dev');
 
-    let genderLabel = ['Férfi', 'Nő'];
-    let chartValues = [givenData['0']['TestCount'], givenData['1']['TestCount']];
+    let genderLabel = ['Nő', 'Férfi'];
+    let chartValues = [givenData['1']['TestCount'], givenData['0']['TestCount']];
 
     new Chart(ctx, {
         type: "pie",
         data: {
             labels: genderLabel,
             datasets: [{
-                backgroundColor: ['blue', 'red'],
+                backgroundColor: ['green', 'purple','red', 'white','blue'],
                 data: chartValues
             }]
         },
