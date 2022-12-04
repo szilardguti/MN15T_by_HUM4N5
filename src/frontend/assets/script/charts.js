@@ -71,7 +71,7 @@ function generatestatfndone(givenData) {
         data: {
             labels: genderLabel,
             datasets: [{
-                backgroundColor: ['green', 'purple','red', 'white','blue'],
+                backgroundColor: ['green', 'purple','red', 'white','blue','yellow'],
                 data: chartValues
             }]
         },
@@ -104,12 +104,16 @@ function generatestatbyages(givenData) {
         data: {
             labels: ageLabel,
             datasets: [{
-                label: 'Kitöltők száma kor szerint',
-                backgroundColor: ['green', 'purple','red', 'white','blue'],
+                backgroundColor: ['green', 'purple','red', 'white','blue','yellow'],
                 data: chartValues
             }]
         },
         options: {
+            plugins: {
+                legend: {
+                  display: false
+                }
+              },
             title: {
                 display: false,
                 text: "TODO"
@@ -130,11 +134,12 @@ function generatestatfnreg(givenData) {
         data: {
             labels: genderLabel,
             datasets: [{
-                backgroundColor: ['green', 'purple'],
+                backgroundColor: ['pink', 'lightblue'],
                 data: chartValues
             }]
         },
         options: {
+            
             title: {
                 display: true,
                 text: "TODO"
@@ -162,12 +167,16 @@ function generatestatbystudiesdone(givenData) {
         data: {
             labels: studiesLabel,
             datasets: [{
-                label: 'Kitöltések száma iskolai végzetségek szerint',
-                backgroundColor: ['green', 'purple','red', 'white','blue'],
+                backgroundColor: ['green', 'purple','red', 'white','blue','yellow'],
                 data: chartValues
             }]
         },
         options: {
+            plugins: {
+                legend: {
+                  display: false
+                }
+              },
             title: {
                 display: false,
                 text: "TODO"
@@ -195,12 +204,16 @@ function generatestatbystudiesreg(givenData) {
         data: {
             labels: studiesLabel,
             datasets: [{
-                label: 'Kitöltők száma iskolai végzetségek szerint',
-                backgroundColor: ['green', 'purple','red', 'white','blue'],
+                backgroundColor: ['green', 'purple','red', 'white','blue','yellow'],
                 data: chartValues
             }]
         },
         options: {
+            plugins: {
+                legend: {
+                  display: false
+                }
+              },
             title: {
                 display: false,
                 text: "TODO"
@@ -233,6 +246,11 @@ function generatestattop10(givenData) {
             }]
         },
         options: {
+            plugins: {
+                legend: {
+                  display: false
+                }
+              },
             title: {
                 display: false,
                 text: "TODO"
