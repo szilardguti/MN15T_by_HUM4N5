@@ -3,6 +3,7 @@ fetch('https://mn15t-by-hum4n5.onrender.com/wakeup', {
 })
 
 function register() {
+  document.getElementById("login-button").disabled = true;
   let age = document.getElementById("age");
   let bender = document.getElementById("choose-gender");
   let school = document.getElementById("suli");
@@ -12,7 +13,7 @@ function register() {
   console.log(school.value);
   console.log(gender);
 
-  if (gender == undefined || school.value == "Kérem válasszon" || age.value == "" ) {
+  if (gender == undefined || school.value == "Kérem válasszon" || age.value == "") {
     let errorMsg = document.getElementById("error-text");
     errorMsg.innerHTML = "A továbblépéshez töltsön ki minden mezőt";
     errorMsg.style.fontSize = "14px";
