@@ -20,8 +20,15 @@ body {
 
 .swiper-slide {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.graph-label {
+    padding-bottom: 1rem;
+    color: rgb(209, 190, 168);
+    font-size: 32px;
 }
 
 canvas {
