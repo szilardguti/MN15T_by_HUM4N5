@@ -529,3 +529,19 @@ ___
 - Várt eredmény: A statisztika oldal esztétikus
 - Kapott eredmény: A statisztika oldal egész esztétikus
 A teszt sikeresen lezárult
+___
+- Tesztelő neve: Guti Szilárd
+- Tesztelés ideje: 2022.12.04. 
+- Tesztelt rendszer: MN15T_8Y_HUM4N5 
+- Tesztkörnyezet: localhost - MySQL adatbázis
+- Várt eredmény: Backend webalkalmazás és adatbázis megfelelően kapcsolódik
+- Kapott eredmény: A Backend alkalmazás eléri és megfelelően kommunikál a távoli adatbázissal
+A teszt sikeresen lezárult"
+___
+- Tesztelő neve: Guti Szilárd
+- Tesztelés ideje: 2022.12.04. 
+- Tesztelt rendszer: MN15T_8Y_HUM4N5 
+- Tesztkörnyezet: render.com webszolgáltató - MySQL adatbázis
+- Várt eredmény: Backend webalkalmazás és adatbázis megfelelően kapcsolódik
+- Kapott eredmény: A Backend alkalmazás eléri és megfelelően kommunikál a távoli adatbázissal
+A teszt sikeresen lezárult"
