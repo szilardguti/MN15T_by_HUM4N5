@@ -15,3 +15,5 @@ part in the process of identifying MNIST data
 - [Nagy László](https://github.com/Laci730)
 - [Erdei Ákos](https://github.com/erdeiakos)
 - [Guti Szilárd](https://github.com/szilardguti)
+
+## Try it out yourself at this [link](http://mnistproject.infinityfreeapp.com/?i=1)
